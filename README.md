@@ -13,7 +13,7 @@ https://mkparkin.github.io/Rinvent/
 # First Time Install
 
 ``` r
-devtools::install_github("mkparkin/Rinvent")
+devtools::install_github("mkparkin/Rinvent",upgrade="never")
 ```
 # example functions 
 #### readparquetR

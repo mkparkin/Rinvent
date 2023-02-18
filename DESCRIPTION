@@ -3,12 +3,14 @@ Type: Package
 Title: Useful simple functions for R to work with cloud, simple functions
 Version: 1.0.0
 Author: koray parkin
-Maintainer: koray parkin
 Description: Just to post some function that might be helpful for others
 License: MIT
 Encoding: UTF-8
 LazyData: true
 Imports:
-  data.table,AzureStor,
-  arrow,aws.s3,RJSONIO
+  data.table,
+  AzureStor,
+  arrow,
+  aws.s3,
+  RJSONIO
 RoxygenNote: 7.2.3

@@ -37,10 +37,7 @@ readparquetR(
 
 \item{containerconnection}{if filelocation="azure" then we need connection. something like this}
 
-\item{bucket}{if filelocation="s3" we need to put bucket name
-bl <- AzureStor::storage_endpoint(az.congif$production$link,
-  key=az.congif$production$key)
-  container_datastore <- AzureStor::storage_container(bl, "datastore")}
+\item{bucket}{if filelocation="s3" we need to put bucket name}
 }
 \value{
 data table

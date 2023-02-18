@@ -22,20 +22,14 @@ Location of the file can be local, aws s3 or azure blob
 There are useful parameters to filter the data while reading it
 ``` r
 # read parquet from local with where condition in the partition
-readparquetR(pathtoread="C:/users/...",
-add_part_names=F,
-sample=F,
-where="sku=1 & store=1",
-partition="2022")
+readparquetR(pathtoread="C:/users/...", add_part_names=F, sample=F, where="sku=1 & store=1", partition="2022")
 
 #read local delta files
-readparquetR(pathtoread="C:/users/...",
-format="delta")
+readparquetR(pathtoread="C:/users/...", format="delta")
 
-readparquetR(pathtoread="blobpath/subdirectory/",
-filelocation = "azure",
-format="delta",
-containerconnection = your_connection) 
+your_connection = AzureStor::storage_container(AzureStor::storage_endpoint(your_link, key=your_key), "your_container")
+
+readparquetR(pathtoread="blobpath/subdirectory/", filelocation = "azure", format="delta", containerconnection = your_connection) 
 
 ```
 

@@ -35,23 +35,15 @@ readparquetR(
 
 \item{filelocation}{"local" or "azure" or "s3"}
 
-\item{containerconnection}{if filelocation="azure" then we need connection. something like this}
+\item{containerconnection}{if filelocation="azure" then we need connection name}
 
 \item{bucket}{if filelocation="s3" we need to put bucket name}
-}
-\value{
-data table
 }
 \description{
 reads parquet,delta files from local or cloud
 }
 \examples{
- sample_data <- readparquetR("localfolder/",
-collist = c("column1"
-           ,"column2"
-           ,"column3"
-),
-format="delta",
-where="SKU==19058901 & STORE!='1905'")
+readparquetR(pathtoread="localfolder/", collist = c("column1","column2","column3"),format="delta",where="SKU==19058901 & STORE!='1905'")
 readparquetR(pathtoread="C:/users/...",add_part_names=F,collist="",sample=F,where="sku=1 & store=1",partition="2022")
+your_connection = AzureStor::storage_container(AzureStor::storage_endpoint(your_link, key=your_key), "your_container")
 }

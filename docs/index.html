@@ -91,20 +91,14 @@
 <p>Objective is to read parquet or delta files with R. Location of the file can be local, aws s3 or azure blob There are useful parameters to filter the data while reading it</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># read parquet from local with where condition in the partition</span></span>
-<span><span class="fu"><a href="reference/readparquetR.html">readparquetR</a></span><span class="op">(</span>pathtoread<span class="op">=</span><span class="st">"C:/users/..."</span>,</span>
-<span>add_part_names<span class="op">=</span><span class="cn">F</span>,</span>
-<span>sample<span class="op">=</span><span class="cn">F</span>,</span>
-<span>where<span class="op">=</span><span class="st">"sku=1 &amp; store=1"</span>,</span>
-<span>partition<span class="op">=</span><span class="st">"2022"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="reference/readparquetR.html">readparquetR</a></span><span class="op">(</span>pathtoread<span class="op">=</span><span class="st">"C:/users/..."</span>, add_part_names<span class="op">=</span><span class="cn">F</span>, sample<span class="op">=</span><span class="cn">F</span>, where<span class="op">=</span><span class="st">"sku=1 &amp; store=1"</span>, partition<span class="op">=</span><span class="st">"2022"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co">#read local delta files</span></span>
-<span><span class="fu"><a href="reference/readparquetR.html">readparquetR</a></span><span class="op">(</span>pathtoread<span class="op">=</span><span class="st">"C:/users/..."</span>,</span>
-<span>format<span class="op">=</span><span class="st">"delta"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="reference/readparquetR.html">readparquetR</a></span><span class="op">(</span>pathtoread<span class="op">=</span><span class="st">"C:/users/..."</span>, format<span class="op">=</span><span class="st">"delta"</span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu"><a href="reference/readparquetR.html">readparquetR</a></span><span class="op">(</span>pathtoread<span class="op">=</span><span class="st">"blobpath/subdirectory/"</span>,</span>
-<span>filelocation <span class="op">=</span> <span class="st">"azure"</span>,</span>
-<span>format<span class="op">=</span><span class="st">"delta"</span>,</span>
-<span>containerconnection <span class="op">=</span> <span class="va">your_connection</span><span class="op">)</span> </span></code></pre></div>
+<span><span class="va">your_connection</span> <span class="op">=</span> <span class="fu">AzureStor</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/AzureStor/man/generics.html" class="external-link">storage_container</a></span><span class="op">(</span><span class="fu">AzureStor</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/AzureStor/man/storage_endpoint.html" class="external-link">storage_endpoint</a></span><span class="op">(</span><span class="va">your_link</span>, key<span class="op">=</span><span class="va">your_key</span><span class="op">)</span>, <span class="st">"your_container"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="reference/readparquetR.html">readparquetR</a></span><span class="op">(</span>pathtoread<span class="op">=</span><span class="st">"blobpath/subdirectory/"</span>, filelocation <span class="op">=</span> <span class="st">"azure"</span>, format<span class="op">=</span><span class="st">"delta"</span>, containerconnection <span class="op">=</span> <span class="va">your_connection</span><span class="op">)</span> </span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="contributing">Contributing<a class="anchor" aria-label="anchor" href="#contributing"></a>

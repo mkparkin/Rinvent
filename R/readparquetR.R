@@ -9,22 +9,13 @@
 #' @param samplesizecount default=3 rows. you can change it
 #' @param add_part_names when it is partitioned, you need to make this T to add partition names as column
 #' @param filelocation "local" or "azure" or "s3"
-#' @param containerconnection if filelocation="azure" then we need connection. something like this
-#' @example bl <- AzureStor::storage_endpoint(az.congif$production$link,
-#'   key=az.congif$production$key)
-#'   container_datastore <- AzureStor::storage_container(bl, "datastore")
+#' @param containerconnection if filelocation="azure" then we need connection name
 #' @param bucket if filelocation="s3" we need to put bucket name
-#' @examples  sample_data <- readparquetR("localfolder/",
-#' collist = c("column1"
-#'            ,"column2"
-#'            ,"column3"
-#' ),
-#' format="delta",
-#' where="SKU==19058901 & STORE!='1905'")
+#' @examples readparquetR(pathtoread="localfolder/", collist = c("column1","column2","column3"),format="delta",where="SKU==19058901 & STORE!='1905'")
 #' @examples readparquetR(pathtoread="C:/users/...",add_part_names=F,collist="",sample=F,where="sku=1 & store=1",partition="2022")
+#' @examples your_connection = AzureStor::storage_container(AzureStor::storage_endpoint(your_link, key=your_key), "your_container")
 #' @export readparquetR
 #' @import data.table
-
 
 readparquetR = function(pathtoread,
                          where="",

@@ -3,14 +3,8 @@
 ## Intro Page
 https://mkparkin.github.io/Rinvent/
 
-## Release Notes
-
-### Version: 1.0.1 Date=2023-02-20
--   Bug fix if there is no checkpoint file
-### Version: 1.0.0 Date=2023-02-17
--   first push
-
-
+## Repo
+https://github.com/mkparkin/Rinvent
 
 # First Time Install
 
@@ -34,6 +28,14 @@ your_connection = AzureStor::storage_container(AzureStor::storage_endpoint(your_
 readparquetR(pathtoread="blobpath/subdirectory/", filelocation = "azure", format="delta", containerconnection = your_connection) 
 
 ```
+
+## Release Notes
+
+### Version: 1.0.1 Date=2023-02-20
+-   Bug fix if there is no checkpoint file
+
+### Version: 1.0.0 Date=2023-02-17
+-   first push
 
 
 

@@ -5,6 +5,8 @@ https://mkparkin.github.io/Rinvent/
 
 ## Release Notes
 
+### Version: 1.0.1 Date=2023-02-20
+-   Bug fix if there is no checkpoint file
 ### Version: 1.0.0 Date=2023-02-17
 -   first push
 

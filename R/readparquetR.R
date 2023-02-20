@@ -157,6 +157,8 @@ readparquetR = function(pathtoread,
                                     full.names = T,
                                     recursive = T)
 
+        if(length(checkpointlist)>0){
+
         checkpointlist=checkpointlist[order(checkpointlist)]
         checkpointlist=tail(checkpointlist,1)
         allchecks=lapply(checkpointlist, function(x){
@@ -181,6 +183,8 @@ readparquetR = function(pathtoread,
         )
 
         data_part_final=data_part_final[!duplicated(data_part_final)]
+
+        }
 
 
 
@@ -408,6 +412,8 @@ readparquetR = function(pathtoread,
                                   full.names = T,
                                   recursive = T)
 
+      if(length(checkpointlist)>0){
+
       checkpointlist=checkpointlist[order(checkpointlist)]
       checkpointlist=tail(checkpointlist,1)
       allchecks=lapply(checkpointlist, function(x){
@@ -432,6 +438,8 @@ readparquetR = function(pathtoread,
       )
 
       data_part_final=data_part_final[!duplicated(data_part_final)]
+
+      }
 
 
 

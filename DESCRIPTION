@@ -1,7 +1,7 @@
 Package: Rinvent
 Type: Package
 Title: Useful simple functions for R to work with cloud, simple functions
-Version: 1.0.0
+Version: 1.0.1
 Author: Koray
 Maintainer: Koray Parkin <emailaddress@email.com>
 Description: Just to post some function that might be helpful for others

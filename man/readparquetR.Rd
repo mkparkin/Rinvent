@@ -46,8 +46,9 @@ reads parquet,delta files from local or cloud
 temp <- tempfile()
 arrow::write_parquet(mtcars, paste(temp,".parquet"))
 head(readparquetR(pathtoread=paste(temp,".parquet")),10)
-readparquetR(pathtoread=paste(temp,".parquet"),
-collist = c("mpg","cyl","vs"),
-format="parquet",
-where="cyl==4 & vs!='0'")
+  # column select and apply where condition
+  readparquetR(pathtoread=paste(temp,".parquet"),
+              collist = c("mpg","cyl","vs"),
+              format="parquet",
+              where="cyl==4 & vs!='0'")
 }

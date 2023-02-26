@@ -15,11 +15,15 @@
 #' temp <- tempfile()
 #' arrow::write_parquet(mtcars, paste(temp,".parquet"))
 #' head(readparquetR(pathtoread=paste(temp,".parquet")),10)
-#' @examples readparquetR(pathtoread=paste(temp,".parquet"), sample=T")
-#' @examples readparquetR(pathtoread=paste(temp,".parquet"),
-#' collist = c("mpg","cyl","vs"),
-#' format="parquet",
-#' where="cyl==4 & vs!='0'")
+#' @examples
+#'   # read sample rows
+#'   readparquetR(pathtoread=paste(temp,".parquet"), sample=T")
+#' @examples
+#'   # column select and apply where condition
+#'   readparquetR(pathtoread=paste(temp,".parquet"),
+#'               collist = c("mpg","cyl","vs"),
+#'               format="parquet",
+#'               where="cyl==4 & vs!='0'")
 #' @export readparquetR
 #' @import data.table
 

@@ -1,21 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>/404.html</loc>
+    <loc>https://mkparkin.github.io/Rinvent/404.html</loc>
   </url>
   <url>
-    <loc>/authors.html</loc>
+    <loc>https://mkparkin.github.io/Rinvent/articles/articles/Sample-Usage.html</loc>
   </url>
   <url>
-    <loc>/index.html</loc>
+    <loc>https://mkparkin.github.io/Rinvent/articles/index.html</loc>
   </url>
   <url>
-    <loc>/LICENSE-text.html</loc>
+    <loc>https://mkparkin.github.io/Rinvent/articles/Sample-Usage.html</loc>
   </url>
   <url>
-    <loc>/reference/index.html</loc>
+    <loc>https://mkparkin.github.io/Rinvent/authors.html</loc>
   </url>
   <url>
-    <loc>/reference/readparquetR.html</loc>
+    <loc>https://mkparkin.github.io/Rinvent/index.html</loc>
+  </url>
+  <url>
+    <loc>https://mkparkin.github.io/Rinvent/LICENSE-text.html</loc>
+  </url>
+  <url>
+    <loc>https://mkparkin.github.io/Rinvent/news/index.html</loc>
+  </url>
+  <url>
+    <loc>https://mkparkin.github.io/Rinvent/reference/exampleDataR.html</loc>
+  </url>
+  <url>
+    <loc>https://mkparkin.github.io/Rinvent/reference/index.html</loc>
+  </url>
+  <url>
+    <loc>https://mkparkin.github.io/Rinvent/reference/readparquetR.html</loc>
   </url>
 </urlset>

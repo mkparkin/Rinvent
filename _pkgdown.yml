@@ -1,0 +1,23 @@
+url: https://mkparkin.github.io/Rinvent/
+title: Rinvent
+destination: docs
+development:
+  mode: release
+navbar:
+  structure:
+    left:  [home, articles, reference, news]
+    right: [github]
+components:
+  home: ~
+  articles:
+    text: Articles
+    menu:
+    - text: Sample Usages
+      href: articles/Sample-usage.html
+template:
+  bootstrap: 5
+  bootswatch: lux
+  bslib:
+    pkgdown-nav-height: 100px
+search:
+  exclude: ['news/index.html']

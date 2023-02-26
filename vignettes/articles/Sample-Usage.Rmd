@@ -1,0 +1,20 @@
+---
+title: "Sample-Usage"
+author: "Koray"
+date: "`r Sys.Date()`"
+---
+
+Sample usages from package functions
+
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(Rinvent)
+head(exampleDataR)
+```

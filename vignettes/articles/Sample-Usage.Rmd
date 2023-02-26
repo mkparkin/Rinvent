@@ -15,6 +15,21 @@ knitr::opts_chunk$set(
 ```
 
 ```{r setup}
+# sample data
 library(Rinvent)
 head(exampleDataR)
 ```
+
+
+``` {r}
+library(Rinvent)
+exampleDataR= data.table::as.data.table(exampleDataR)
+exampleDataR = exampleDataR[order(location,item,date)]
+exampleDataR[,ma5:= maR(sales,4),list(location,item)]
+head(exampleDataR,15)
+```
+
+
+
+
+

@@ -74,7 +74,7 @@
       <img src="" class="logo" alt=""><h1>Sample-Usage</h1>
                         <h4 data-toc-skip class="author">Koray</h4>
             
-            <h4 data-toc-skip class="date">2023-02-25</h4>
+            <h4 data-toc-skip class="date">2023-02-26</h4>
       
       <small class="dont-index">Source: <a href="http://github.com/mkparkin/Rinvent/blob/HEAD/vignettes/articles/Sample-Usage.Rmd" class="external-link"><code>vignettes/articles/Sample-Usage.Rmd</code></a></small>
       <div class="d-none name"><code>Sample-Usage.Rmd</code></div>
@@ -84,15 +84,38 @@
     
 <p>Sample usages from package functions</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/mkparkin/Rinvent/" class="external-link">Rinvent</a></span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="co"># sample data</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/mkparkin/Rinvent/" class="external-link">Rinvent</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">exampleDataR</span><span class="op">)</span></span>
 <span><span class="co">#&gt;   location   item       date sales</span></span>
-<span><span class="co">#&gt; 1 istanbul coffee 1923-10-29    27</span></span>
-<span><span class="co">#&gt; 2 istanbul coffee 1923-10-30    31</span></span>
-<span><span class="co">#&gt; 3 istanbul coffee 1923-10-31    31</span></span>
-<span><span class="co">#&gt; 4 istanbul coffee 1923-11-01    22</span></span>
-<span><span class="co">#&gt; 5 istanbul coffee 1923-11-02     3</span></span>
-<span><span class="co">#&gt; 6 istanbul coffee 1923-11-03    28</span></span></code></pre></div>
+<span><span class="co">#&gt; 1 istanbul coffee 10/29/1923    27</span></span>
+<span><span class="co">#&gt; 2 istanbul coffee 10/30/1923    31</span></span>
+<span><span class="co">#&gt; 3 istanbul coffee 10/31/1923    31</span></span>
+<span><span class="co">#&gt; 4 istanbul coffee  11/1/1923    22</span></span>
+<span><span class="co">#&gt; 5 istanbul coffee  11/2/1923     3</span></span>
+<span><span class="co">#&gt; 6 istanbul coffee  11/3/1923    28</span></span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/mkparkin/Rinvent/" class="external-link">Rinvent</a></span><span class="op">)</span></span>
+<span><span class="va">exampleDataR</span><span class="op">=</span> <span class="fu">data.table</span><span class="fu">::</span><span class="fu"><a href="https://Rdatatable.gitlab.io/data.table/reference/as.data.table.html" class="external-link">as.data.table</a></span><span class="op">(</span><span class="va">exampleDataR</span><span class="op">)</span></span>
+<span><span class="va">exampleDataR</span> <span class="op">=</span> <span class="va">exampleDataR</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/order.html" class="external-link">order</a></span><span class="op">(</span><span class="va">location</span>,<span class="va">item</span>,<span class="va">date</span><span class="op">)</span><span class="op">]</span></span>
+<span><span class="va">exampleDataR</span><span class="op">[</span>,<span class="va">ma5</span><span class="op">:=</span> <span class="fu"><a href="../reference/maR.html">maR</a></span><span class="op">(</span><span class="va">sales</span>,<span class="fl">4</span><span class="op">)</span>,<span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="va">location</span>,<span class="va">item</span><span class="op">)</span><span class="op">]</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">exampleDataR</span>,<span class="fl">15</span><span class="op">)</span></span>
+<span><span class="co">#&gt;     location item      date sales   ma5</span></span>
+<span><span class="co">#&gt;  1:   ankara  tea 4/23/1920    22    NA</span></span>
+<span><span class="co">#&gt;  2:   ankara  tea 4/24/1920    30 22.00</span></span>
+<span><span class="co">#&gt;  3:   ankara  tea 4/25/1920    29 26.00</span></span>
+<span><span class="co">#&gt;  4:   ankara  tea 4/26/1920    34 27.00</span></span>
+<span><span class="co">#&gt;  5:   ankara  tea 4/27/1920     9 28.75</span></span>
+<span><span class="co">#&gt;  6:   ankara  tea 4/28/1920    15 25.50</span></span>
+<span><span class="co">#&gt;  7:   ankara  tea 4/29/1920    40 21.75</span></span>
+<span><span class="co">#&gt;  8:   ankara  tea 4/30/1920     7 24.50</span></span>
+<span><span class="co">#&gt;  9:   ankara  tea  5/1/1920    26 17.75</span></span>
+<span><span class="co">#&gt; 10:   ankara  tea 5/10/1920    39 22.00</span></span>
+<span><span class="co">#&gt; 11:   ankara  tea 5/11/1920    39 28.00</span></span>
+<span><span class="co">#&gt; 12:   ankara  tea 5/12/1920    12 27.75</span></span>
+<span><span class="co">#&gt; 13:   ankara  tea 5/13/1920     2 29.00</span></span>
+<span><span class="co">#&gt; 14:   ankara  tea 5/14/1920    29 23.00</span></span>
+<span><span class="co">#&gt; 15:   ankara  tea 5/15/1920     7 20.50</span></span></code></pre></div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
     </nav></aside>
 </div>

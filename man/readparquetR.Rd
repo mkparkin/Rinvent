@@ -43,7 +43,7 @@ readparquetR(
 reads parquet,delta files from local or cloud
 }
 \examples{
-readparquetR(pathtoread="localfolder/", collist = c("column1","column2","column3"),format="delta",where="SKU==19058901 & STORE!='1905'")
+readparquetR(pathtoread, collist = c("column1","column2","column3"),format="delta",where="SKU==19058901 & STORE!='1905'")
 readparquetR(pathtoread="C:/users/...",add_part_names=F,collist="",sample=F,where="sku=1 & store=1",partition="2022")
 your_connection = AzureStor::storage_container(AzureStor::storage_endpoint(your_link, key=your_key), "your_container")
 }

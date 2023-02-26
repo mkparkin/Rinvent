@@ -1,6 +1,5 @@
 ---
 title: "Sample-Usage"
-author: "Koray"
 date: "`r Sys.Date()`"
 ---
 

@@ -1,6 +1,5 @@
 ---
 title: "Azure-Blob-Connection"
-author: "Koray"
 date: "`r Sys.Date()`"
 ---
 

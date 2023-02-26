@@ -35,7 +35,7 @@ readparquetR(
 
 \item{filelocation}{"local" or "azure" or "s3"}
 
-\item{containerconnection}{if filelocation="azure" then we need connection name}
+\item{containerconnection}{if filelocation="azure" then we need connection name \href{https://mkparkin.github.io/Rinvent/articles/AzureBlobConnection.html}{Azure Helper Document}}
 
 \item{bucket}{if filelocation="s3" we need to put bucket name}
 }
@@ -45,8 +45,9 @@ reads parquet,delta files from local or cloud
 \examples{
 temp <- tempfile()
 arrow::write_parquet(mtcars, paste(temp,".parquet"))
-readparquetR(paste(temp,".parquet"))
-readparquetR(pathtoread, collist = c("column1","column2","column3"),format="delta",where="SKU==19058901 & STORE!='1905'")
-readparquetR(pathtoread="C:/users/...",add_part_names=F,collist="",sample=F,where="sku=1 & store=1",partition="2022")
-your_connection = AzureStor::storage_container(AzureStor::storage_endpoint(your_link, key=your_key), "your_container")
+head(readparquetR(pathtoread=paste(temp,".parquet")),10)
+readparquetR(pathtoread=paste(temp,".parquet"),
+collist = c("mpg","cyl","vs"),
+format="parquet",
+where="cyl==4 & vs!='0'")
 }

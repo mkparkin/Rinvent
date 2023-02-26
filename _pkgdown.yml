@@ -1,23 +1,37 @@
-url: https://mkparkin.github.io/Rinvent/
 title: Rinvent
+url: https://mkparkin.github.io/Rinvent/
 destination: docs
 development:
-  mode: release
+  mode: auto
 navbar:
-  structure:
-    left:  [home, articles, reference, news]
-    right: [github]
-components:
-  home: ~
-  articles:
-    text: Articles
-    menu:
-    - text: Sample Usages
-      href: articles/Sample-usage.html
+  left:
+    - icon: fa-home
+      href: index.html
+  right:
+    - text: "articles"
+      icon: fas fa-book
+      menu:
+      -  text: Sample Usage
+         href: articles/Sample-Usage.html
+      -  text: Connect Azure
+         href: articles/AzureBlobConnection.html
+    - icon: fa-newspaper-o
+      text: "news"
+      href: news/index.html
+    - icon: fa-file-code-o
+      text: "functions"
+      href: reference/index.html
+    - icon: fa-github fa-lg
+      text: "github"
+      href: https://github.com/mkparkin/Rinvent/
 template:
+  params:
+    bootswatch: flatly
+    ganalytics: UA-84499524-2
   bootstrap: 5
-  bootswatch: lux
   bslib:
     pkgdown-nav-height: 100px
+  theme: breeze-light
 search:
   exclude: ['news/index.html']
+

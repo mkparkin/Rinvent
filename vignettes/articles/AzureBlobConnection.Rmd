@@ -1,0 +1,20 @@
+---
+title: "Azure-Blob-Connection"
+author: "Koray"
+date: "`r Sys.Date()`"
+---
+
+How to connect Azure Blob
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+# sample data
+## tbd
+# your_connection = AzureStor::storage_container(AzureStor::storage_endpoint(your_link, key=your_key), "your_container")
+```

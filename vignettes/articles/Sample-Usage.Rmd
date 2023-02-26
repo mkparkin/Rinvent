@@ -14,13 +14,14 @@ knitr::opts_chunk$set(
 )
 ```
 
+# Sample Data
 ```{r setup}
 # sample data
 library(Rinvent)
 head(exampleDataR)
 ```
 
-
+# maR 
 ``` {r}
 library(Rinvent)
 exampleDataR= data.table::as.data.table(exampleDataR)
@@ -29,6 +30,7 @@ exampleDataR[,ma5:= maR(sales,4),list(location,item)]
 head(exampleDataR,15)
 ```
 
+# readparquetR
 ``` {r}
 temp <- tempfile()
 arrow::write_parquet(mtcars, paste(temp,".parquet"))

@@ -54,6 +54,7 @@
     articles
   </a>
   <div class="dropdown-menu" aria-labelledby="dropdown--articles">
+    <a class="dropdown-item" href="articles/installation.html">Package Install</a>
     <a class="dropdown-item" href="articles/Sample-Usage.html">Sample Usage</a>
     <a class="dropdown-item" href="articles/AzureBlobConnection.html">Connect Azure</a>
   </div>
@@ -92,38 +93,24 @@
 <div class="section level2">
 <h2 id="intro-page">Intro Page<a class="anchor" aria-label="anchor" href="#intro-page"></a>
 </h2>
-<p><a href="https://mkparkin.github.io/Rinvent/" class="uri">https://mkparkin.github.io/Rinvent/</a></p>
 </div>
-</div>
-<div class="section level1">
-<h1 id="first-time-install">First Time Install<a class="anchor" aria-label="anchor" href="#first-time-install"></a>
-</h1>
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># install.packages("devtools")</span></span>
-<span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"mkparkin/Rinvent"</span>,upgrade<span class="op">=</span><span class="st">"never"</span><span class="op">)</span></span></code></pre></div>
-</div>
-<div class="section level1">
-<h1 id="example-functions">example functions<a class="anchor" aria-label="anchor" href="#example-functions"></a>
-</h1>
+<div class="section level2">
+<h2 id="example-functions">Example functions<a class="anchor" aria-label="anchor" href="#example-functions"></a>
+</h2>
 <div class="section level4">
 <h4 id="readparquetr">readparquetR<a class="anchor" aria-label="anchor" href="#readparquetr"></a>
 </h4>
-<p>Objective is to read parquet or delta files with R. Location of the file can be local, aws s3 or azure blob There are useful parameters to filter the data while reading it</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># read parquet from local with where condition in the partition</span></span>
-<span><span class="fu"><a href="reference/readparquetR.html">readparquetR</a></span><span class="op">(</span>pathtoread<span class="op">=</span><span class="st">"C:/users/..."</span>, add_part_names<span class="op">=</span><span class="cn">F</span>, sample<span class="op">=</span><span class="cn">F</span>, where<span class="op">=</span><span class="st">"sku=1 &amp; store=1"</span>, partition<span class="op">=</span><span class="st">"2022"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co">#read local delta files</span></span>
-<span><span class="fu"><a href="reference/readparquetR.html">readparquetR</a></span><span class="op">(</span>pathtoread<span class="op">=</span><span class="st">"C:/users/..."</span>, format<span class="op">=</span><span class="st">"delta"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">your_connection</span> <span class="op">=</span> <span class="fu">AzureStor</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/AzureStor/man/generics.html" class="external-link">storage_container</a></span><span class="op">(</span><span class="fu">AzureStor</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/AzureStor/man/storage_endpoint.html" class="external-link">storage_endpoint</a></span><span class="op">(</span><span class="va">your_link</span>, key<span class="op">=</span><span class="va">your_key</span><span class="op">)</span>, <span class="st">"your_container"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="reference/readparquetR.html">readparquetR</a></span><span class="op">(</span>pathtoread<span class="op">=</span><span class="st">"blobpath/subdirectory/"</span>, filelocation <span class="op">=</span> <span class="st">"azure"</span>, format<span class="op">=</span><span class="st">"delta"</span>, containerconnection <span class="op">=</span> <span class="va">your_connection</span><span class="op">)</span> </span></code></pre></div>
+<p>Objective is to read parquet or delta files with R. Location of the file can be local, aws s3 or azure blob There are useful parameters to filter the data while reading it <a href="https://mkparkin.github.io/Rinvent/reference/readparquetR.html" class="uri">https://mkparkin.github.io/Rinvent/reference/readparquetR.html</a></p>
+</div>
+<div class="section level4">
+<h4 id="mar">maR<a class="anchor" aria-label="anchor" href="#mar"></a>
+</h4>
+<p>Objective: add moving average as a column. Details <a href="https://mkparkin.github.io/Rinvent/reference/maR.html" class="uri">https://mkparkin.github.io/Rinvent/reference/maR.html</a></p>
+</div>
 </div>
 <div class="section level2">
 <h2 id="contributing">Contributing<a class="anchor" aria-label="anchor" href="#contributing"></a>
 </h2>
-<hr>
 <p><strong>Checklist before MR</strong></p>
 <ol style="list-style-type: decimal">
 <li><p>clone the repo</p></li>
@@ -133,13 +120,9 @@
 <li><p>Run devtools::build_readme() to update README.md</p></li>
 <li><p>pkgdown::build_site() for website update</p></li>
 </ol>
-<div class="section level4">
-<h4 id="this-is-it-to-make-sure-it-is-working-you-can-click-on-build-in-rstudio-top-menu-then-click-clean-and-rebuild">this is it. to make sure it is working, you can click on “Build” in RStudio top menu then click “Clean and Rebuild”<a class="anchor" aria-label="anchor" href="#this-is-it-to-make-sure-it-is-working-you-can-click-on-build-in-rstudio-top-menu-then-click-clean-and-rebuild"></a>
-</h4>
+<p>This is it. to make sure it is working, you can click on “Build” in RStudio top menu then click “Clean and Rebuild”</p>
 </div>
 </div>
-</div>
-
   </main><aside class="col-md-3"><div class="links">
 <h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">

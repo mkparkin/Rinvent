@@ -1,0 +1,22 @@
+---
+title: "Sample-Usage"
+author: "Koray"
+date: "`r Sys.Date()`"
+---
+
+Sample usages from package functions
+
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+# Sample Data
+``` r
+# install.packages("devtools") # you need to install devtools if you don't have it
+devtools::install_github("mkparkin/Rinvent",upgrade="never")
+# if you want to upgrade related packages, remove that parameter 
+```

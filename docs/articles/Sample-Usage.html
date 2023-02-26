@@ -54,6 +54,7 @@
     articles
   </a>
   <div class="dropdown-menu" aria-labelledby="dropdown--articles">
+    <a class="dropdown-item" href="../articles/installation.html">Package Install</a>
     <a class="dropdown-item" href="../articles/Sample-Usage.html">Sample Usage</a>
     <a class="dropdown-item" href="../articles/AzureBlobConnection.html">Connect Azure</a>
   </div>
@@ -126,7 +127,7 @@
 <span><span class="va">exampleDataR</span><span class="op">=</span> <span class="fu">data.table</span><span class="fu">::</span><span class="fu"><a href="https://Rdatatable.gitlab.io/data.table/reference/as.data.table.html" class="external-link">as.data.table</a></span><span class="op">(</span><span class="va">exampleDataR</span><span class="op">)</span></span>
 <span><span class="va">exampleDataR</span> <span class="op">=</span> <span class="va">exampleDataR</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/order.html" class="external-link">order</a></span><span class="op">(</span><span class="va">location</span>,<span class="va">item</span>,<span class="va">date</span><span class="op">)</span><span class="op">]</span></span>
 <span><span class="va">exampleDataR</span><span class="op">[</span>,<span class="va">ma5</span><span class="op">:=</span> <span class="fu"><a href="../reference/maR.html">maR</a></span><span class="op">(</span><span class="va">sales</span>,<span class="fl">4</span><span class="op">)</span>,<span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="va">location</span>,<span class="va">item</span><span class="op">)</span><span class="op">]</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">exampleDataR</span>,<span class="fl">15</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">exampleDataR</span>,<span class="fl">10</span><span class="op">)</span></span>
 <span><span class="co">#&gt;     location item      date sales   ma5</span></span>
 <span><span class="co">#&gt;  1:   ankara  tea 4/23/1920    22    NA</span></span>
 <span><span class="co">#&gt;  2:   ankara  tea 4/24/1920    30 22.00</span></span>
@@ -137,12 +138,7 @@
 <span><span class="co">#&gt;  7:   ankara  tea 4/29/1920    40 21.75</span></span>
 <span><span class="co">#&gt;  8:   ankara  tea 4/30/1920     7 24.50</span></span>
 <span><span class="co">#&gt;  9:   ankara  tea  5/1/1920    26 17.75</span></span>
-<span><span class="co">#&gt; 10:   ankara  tea 5/10/1920    39 22.00</span></span>
-<span><span class="co">#&gt; 11:   ankara  tea 5/11/1920    39 28.00</span></span>
-<span><span class="co">#&gt; 12:   ankara  tea 5/12/1920    12 27.75</span></span>
-<span><span class="co">#&gt; 13:   ankara  tea 5/13/1920     2 29.00</span></span>
-<span><span class="co">#&gt; 14:   ankara  tea 5/14/1920    29 23.00</span></span>
-<span><span class="co">#&gt; 15:   ankara  tea 5/15/1920     7 20.50</span></span></code></pre></div>
+<span><span class="co">#&gt; 10:   ankara  tea 5/10/1920    39 22.00</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="readparquetr">readparquetR<a class="anchor" aria-label="anchor" href="#readparquetr"></a>
@@ -184,7 +180,27 @@
 <span><span class="co">#&gt; 30: 19.7   6 145.0 175 3.62 2.770 15.50  0  1    5    6</span></span>
 <span><span class="co">#&gt; 31: 15.0   8 301.0 335 3.54 3.570 14.60  0  1    5    8</span></span>
 <span><span class="co">#&gt; 32: 21.4   4 121.0 109 4.11 2.780 18.60  1  1    4    2</span></span>
-<span><span class="co">#&gt;      mpg cyl  disp  hp drat    wt  qsec vs am gear carb</span></span></code></pre></div>
+<span><span class="co">#&gt;      mpg cyl  disp  hp drat    wt  qsec vs am gear carb</span></span>
+<span></span>
+<span><span class="fu"><a href="../reference/readparquetR.html">readparquetR</a></span><span class="op">(</span>pathtoread<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste</a></span><span class="op">(</span><span class="va">temp</span>,<span class="st">".parquet"</span><span class="op">)</span>, sample<span class="op">=</span><span class="cn">T</span><span class="op">)</span></span>
+<span><span class="co">#&gt;    mpg cyl disp  hp drat   wt  qsec vs am gear carb</span></span>
+<span><span class="co">#&gt; 1:  21   6  160 110  3.9 2.62 16.46  0  1    4    4</span></span>
+<span></span>
+<span><span class="fu"><a href="../reference/readparquetR.html">readparquetR</a></span><span class="op">(</span>pathtoread<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste</a></span><span class="op">(</span><span class="va">temp</span>,<span class="st">".parquet"</span><span class="op">)</span>, </span>
+<span>             collist <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"mpg"</span>,<span class="st">"cyl"</span>,<span class="st">"vs"</span><span class="op">)</span>,</span>
+<span>             format<span class="op">=</span><span class="st">"parquet"</span>,</span>
+<span>             where<span class="op">=</span><span class="st">"cyl==4 &amp; vs!='0'"</span><span class="op">)</span></span>
+<span><span class="co">#&gt;      mpg cyl vs</span></span>
+<span><span class="co">#&gt;  1: 22.8   4  1</span></span>
+<span><span class="co">#&gt;  2: 24.4   4  1</span></span>
+<span><span class="co">#&gt;  3: 22.8   4  1</span></span>
+<span><span class="co">#&gt;  4: 32.4   4  1</span></span>
+<span><span class="co">#&gt;  5: 30.4   4  1</span></span>
+<span><span class="co">#&gt;  6: 33.9   4  1</span></span>
+<span><span class="co">#&gt;  7: 21.5   4  1</span></span>
+<span><span class="co">#&gt;  8: 27.3   4  1</span></span>
+<span><span class="co">#&gt;  9: 30.4   4  1</span></span>
+<span><span class="co">#&gt; 10: 21.4   4  1</span></span></code></pre></div>
 </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
     </nav></aside>

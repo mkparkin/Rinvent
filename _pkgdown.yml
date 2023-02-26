@@ -11,6 +11,8 @@ navbar:
     - text: "articles"
       icon: fas fa-book
       menu:
+      -  text: Package Install
+         href: articles/installation.html
       -  text: Sample Usage
          href: articles/Sample-Usage.html
       -  text: Connect Azure

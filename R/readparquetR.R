@@ -17,7 +17,7 @@
 #' head(readparquetR(pathtoread=paste(temp,".parquet")),10)
 #' @examples
 #'   # read sample rows
-#'   readparquetR(pathtoread=paste(temp,".parquet"), sample=T")
+#'   readparquetR(pathtoread=paste(temp,".parquet"), sample=T)
 #' @examples
 #'   # column select and apply where condition
 #'   readparquetR(pathtoread=paste(temp,".parquet"),

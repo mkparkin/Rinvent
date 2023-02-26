@@ -13,8 +13,14 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r setup}
-# sample data
-## tbd
-# your_connection = AzureStor::storage_container(AzureStor::storage_endpoint(your_link, key=your_key), "your_container")
-```
+
+# Create Blob Connection
+ - go to Azure Portal and choose related storage container https://portal.azure.com/
+ - Check the left menu for "Access Keys". You can both get your Key and Connection string
+ - run the following code
+ - your_connection = AzureStor::storage_container(AzureStor::storage_endpoint(your_link, key=your_key), "your_container")
+ - Tip: put the Key and connection string in local in a config file. i.e.
+ - read config myazurecongif <- read.config("C:/Users/yourname/Documents/yourfile")
+ - blob <- AzureStor::storage_endpoint(endpoint = myazurecongif[link],key = myazurecongif[key])
+ - your_connection <- AzureStor::storage_container(blob, "containername")
+ - Check AzureStor for more  

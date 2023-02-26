@@ -27,7 +27,7 @@ library(Rinvent)
 exampleDataR= data.table::as.data.table(exampleDataR)
 exampleDataR = exampleDataR[order(location,item,date)]
 exampleDataR[,ma5:= maR(sales,4),list(location,item)]
-head(exampleDataR,15)
+head(exampleDataR,10)
 ```
 
 # readparquetR
@@ -35,5 +35,12 @@ head(exampleDataR,15)
 temp <- tempfile()
 arrow::write_parquet(mtcars, paste(temp,".parquet"))
 readparquetR(paste(temp,".parquet"))
-```
 
+readparquetR(pathtoread=paste(temp,".parquet"), sample=T)
+
+readparquetR(pathtoread=paste(temp,".parquet"), 
+             collist = c("mpg","cyl","vs"),
+             format="parquet",
+             where="cyl==4 & vs!='0'")
+
+```

@@ -11,6 +11,10 @@
 #' @param filelocation "local" or "azure" or "s3"
 #' @param containerconnection if filelocation="azure" then we need connection name
 #' @param bucket if filelocation="s3" we need to put bucket name
+#' @examples
+#' temp <- tempfile()
+#' arrow::write_parquet(mtcars, paste(temp,".parquet"))
+#' readparquetR(paste(temp,".parquet"))
 #' @examples readparquetR(pathtoread, collist = c("column1","column2","column3"),format="delta",where="SKU==19058901 & STORE!='1905'")
 #' @examples readparquetR(pathtoread="C:/users/...",add_part_names=F,collist="",sample=F,where="sku=1 & store=1",partition="2022")
 #' @examples your_connection = AzureStor::storage_container(AzureStor::storage_endpoint(your_link, key=your_key), "your_container")

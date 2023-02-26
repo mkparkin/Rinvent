@@ -29,7 +29,9 @@ exampleDataR[,ma5:= maR(sales,4),list(location,item)]
 head(exampleDataR,15)
 ```
 
-
-
-
+``` {r}
+temp <- tempfile()
+arrow::write_parquet(mtcars, paste(temp,".parquet"))
+readparquetR(paste(temp,".parquet"))
+```
 

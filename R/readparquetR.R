@@ -77,8 +77,9 @@ readparquetR = function(pathtoread,
                                         filelistincloud%like% '.checkpoint.parquet'
     ]
 
-    filelistincloud=filelistincloud[order(filelistincloud)]
-
+    if(length(filelistincloud)>0){
+      filelistincloud=filelistincloud[order(filelistincloud)]
+    }
     #
     if(length(filelistincloud[filelistincloud %like% '.checkpoint.parquet'])>0){
       lastcheckpoint = tail(filelistincloud[filelistincloud %like% '.checkpoint.parquet'],1)

@@ -13,7 +13,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# Sample Data
+# exampleDataR
 ```{r setup}
 # sample data
 library(Rinvent)

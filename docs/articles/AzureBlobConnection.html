@@ -26,7 +26,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">Rinvent</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">1.0.3</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">1.0.4</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -94,7 +94,7 @@
   <main id="main" class="col-md-9"><div class="page-header">
       <img src="" class="logo" alt=""><h1>Azure-Blob-Connection</h1>
             
-            <h4 data-toc-skip class="date">2023-02-26</h4>
+            <h4 data-toc-skip class="date">2023-02-27</h4>
       
       <small class="dont-index">Source: <a href="http://github.com/mkparkin/Rinvent/blob/HEAD/vignettes/articles/AzureBlobConnection.Rmd" class="external-link"><code>vignettes/articles/AzureBlobConnection.Rmd</code></a></small>
       <div class="d-none name"><code>AzureBlobConnection.Rmd</code></div>
@@ -109,8 +109,9 @@
 <ul>
 <li>go to Azure Portal and choose related storage container <a href="https://portal.azure.com/" class="external-link uri">https://portal.azure.com/</a>
 </li>
-<li>Check the left menu for “Access Keys”. You can both get your Key and
-Connection string</li>
+<li>Check the left menu for “Access Keys”. Copy Key for “your_key”</li>
+<li>There should be a link for your storage account something like <a href="https://mystorage.blob.core.windows.net/" class="external-link uri">https://mystorage.blob.core.windows.net/</a>, put this link
+instead of “your_link”</li>
 <li>run the following code</li>
 <li>your_connection =
 AzureStor::storage_container(AzureStor::storage_endpoint(your_link,

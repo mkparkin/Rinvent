@@ -15,7 +15,8 @@ knitr::opts_chunk$set(
 
 # Create Blob Connection
  - go to Azure Portal and choose related storage container https://portal.azure.com/
- - Check the left menu for "Access Keys". You can both get your Key and Connection string
+ - Check the left menu for "Access Keys". Copy Key for "your_key"
+ - There should be a link for your storage account something like https://mystorage.blob.core.windows.net/, put this link instead of "your_link"
  - run the following code
  - your_connection = AzureStor::storage_container(AzureStor::storage_endpoint(your_link, key=your_key), "your_container")
  - Tip: put the Key and connection string in local in a config file. i.e.

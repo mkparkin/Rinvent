@@ -37,15 +37,42 @@
     <loc>https://mkparkin.github.io/Rinvent/news/index.html</loc>
   </url>
   <url>
+    <loc>https://mkparkin.github.io/Rinvent/reference/accu.html</loc>
+  </url>
+  <url>
+    <loc>https://mkparkin.github.io/Rinvent/reference/crossjoin.html</loc>
+  </url>
+  <url>
     <loc>https://mkparkin.github.io/Rinvent/reference/exampleDataR.html</loc>
   </url>
   <url>
+    <loc>https://mkparkin.github.io/Rinvent/reference/fast.date.html</loc>
+  </url>
+  <url>
+    <loc>https://mkparkin.github.io/Rinvent/reference/faster_date.html</loc>
+  </url>
+  <url>
+    <loc>https://mkparkin.github.io/Rinvent/reference/gcQuiet.html</loc>
+  </url>
+  <url>
     <loc>https://mkparkin.github.io/Rinvent/reference/index.html</loc>
+  </url>
+  <url>
+    <loc>https://mkparkin.github.io/Rinvent/reference/lsos.html</loc>
   </url>
   <url>
     <loc>https://mkparkin.github.io/Rinvent/reference/maR.html</loc>
   </url>
   <url>
     <loc>https://mkparkin.github.io/Rinvent/reference/readparquetR.html</loc>
+  </url>
+  <url>
+    <loc>https://mkparkin.github.io/Rinvent/reference/read_csv_azure.html</loc>
+  </url>
+  <url>
+    <loc>https://mkparkin.github.io/Rinvent/reference/uniquen.html</loc>
+  </url>
+  <url>
+    <loc>https://mkparkin.github.io/Rinvent/reference/week_start.html</loc>
   </url>
 </urlset>

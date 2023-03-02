@@ -1,3 +1,8 @@
+# Rinvent 1.0.5
+- Release 2023-03-02
+- fundamental small functions added
+- rad csv from azure function is added read_csv_azure
+
 # Rinvent 1.0.4
 - Release 2023-02-27
 - documentation update for blob connection

@@ -1,4 +1,4 @@
-# Rinvent 1.0.5
+# Rinvent 1.0.6
 - Release 2023-03-03
 - better documentation
 

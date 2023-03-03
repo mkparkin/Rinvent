@@ -100,8 +100,15 @@
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span> <span class="fu">crossjoin</span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in cbind(t1, Dummy = 1):</span> argument "t1" is missing, with no default</span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span> <span class="va">exampleDataR</span> <span class="op">=</span> <span class="fu">data.table</span><span class="fu">::</span><span class="fu"><a href="https://Rdatatable.gitlab.io/data.table/reference/as.data.table.html" class="external-link">as.data.table</a></span><span class="op">(</span><span class="va">exampleDataR</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">location_list</span> <span class="op">=</span> <span class="va">exampleDataR</span><span class="op">[</span>,<span class="va">.N</span>,<span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="va">location</span><span class="op">)</span><span class="op">]</span></span></span>
+<span class="r-in"><span><span class="va">item_list</span> <span class="op">=</span> <span class="va">exampleDataR</span><span class="op">[</span>,<span class="va">.N</span>,<span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="va">item</span><span class="op">)</span><span class="op">]</span></span></span>
+<span class="r-in"><span><span class="fu">crossjoin</span><span class="op">(</span>t1<span class="op">=</span><span class="va">location_list</span>, t2<span class="op">=</span><span class="va">item_list</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      item  N location i.N</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1: coffee 30 istanbul  30</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2:    tea 30 istanbul  30</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3: coffee 30   ankara  30</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4:    tea 30   ankara  30</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>

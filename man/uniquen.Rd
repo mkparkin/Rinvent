@@ -2,7 +2,7 @@
 % Please edit documentation in R/fundamentals.R
 \name{uniquen}
 \alias{uniquen}
-\title{uniquen}
+\title{count unique values in a table}
 \usage{
 uniquen(data)
 }
@@ -10,8 +10,8 @@ uniquen(data)
 \item{data}{input data table}
 }
 \description{
-uniquen
+count unique values in a table
 }
 \examples{
- uniquen(df)
+ uniquen(exampleDataR)
 }

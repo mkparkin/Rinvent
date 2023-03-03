@@ -7,12 +7,15 @@
 faster_date(dt, dateCol = "Date")
 }
 \arguments{
-\item{dt, dateCol}{}
+\item{dt}{# data table}
+
+\item{dateCol}{# date column name}
 }
 \description{
 works faster than fast.date
 }
 \examples{
- faster_date(dt,"Date")
-
+ exampleDataR = data.table::as.data.table(exampleDataR)
+exampleDataR = exampleDataR[,dateformat:= date_mdy_ymd(date)]
+faster_date(exampleDataR,"dateformat")
 }

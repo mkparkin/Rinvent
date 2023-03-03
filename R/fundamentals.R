@@ -1,8 +1,25 @@
+#' @title change date format
+#' @description find latest sunday date
+#' @param x date value
+#' @examples exampleDataR= data.table::as.data.table(exampleDataR)
+#' exampleDataR = exampleDataR[order(location,item,date)]
+#' exampleDataR[,date_better:= date_mdy_ymd(date)]
+#' head(exampleDataR,15)
+#' @export date_mdy_ymd
+
+date_mdy_ymd = function(x){
+
+  as.Date(x,format="%m/%d/%Y")
+
+}
+
+
 #' @title find latest sunday
 #' @description find latest sunday date
 #' @param date date value
 #' @examples exampleDataR= data.table::as.data.table(exampleDataR)
 #' exampleDataR = exampleDataR[order(location,item,date)]
+#' exampleDataR = exampleDataR[,date:= date_mdy_ymd(date)]
 #' exampleDataR[,week_start_date:= week_start(date)]
 #' head(exampleDataR,15)
 #' @import data.table
@@ -20,7 +37,11 @@ week_start = function(date){
 #' @param t1 table 1
 #' @param t2 table 2
 #' @return crossjoin()
-#' @examples  crossjoin()
+#' @examples  exampleDataR = data.table::as.data.table(exampleDataR)
+#' location_list = exampleDataR[,.N,list(location)]
+#' item_list = exampleDataR[,.N,list(item)]
+#' crossjoin(t1=location_list, t2=item_list)
+#' @import data.table
 #' @export crossjoin
 crossjoin <- function(t1, t2)
 {
@@ -39,14 +60,13 @@ crossjoin <- function(t1, t2)
 }
 
 
-#' @title accu
-#'
-#' @description accu
+#' @title forecast accuracy
+#' @description measure critical metrics for forecasting
 #' @param actual target column to predict
 #' @param forecast prediction column
 #' @param outlist export column. available options: n,mean,sd,CV,R2,DB,FBias,MPE,MAPE,RMSE,MAD,MADP,MASE,RAE,WMAPE
 #' @return NULL
-#' @examples  accu(actual=5,forecast=10,outlist="mean,WMAPE,FBias")
+#' @examples  accu(actual=105,forecast=100,outlist="mean,WMAPE,FBias")
 #' @export accu
 accu=function(actual,forecast,outlist="mean,FBias,WMAPE"
 ){
@@ -81,7 +101,7 @@ accu=function(actual,forecast,outlist="mean,FBias,WMAPE"
 #' @description works faster than as.Date.
 #' @param x date column to convert
 #' @return NULL
-#' @examples  fast.date('as.factor('2021-01-01')')
+#' @examples  fast.date(as.factor('2021-01-01'))
 #' @export fast.date
 
 fast.date=function(x){
@@ -94,17 +114,15 @@ fast.date=function(x){
 
 
 #' @title faster date conversion
-#'
 #' @description works faster than fast.date
-#'
-#' @param dt,dateCol
-#'
+#' @param dt # data table
+#' @param dateCol # date column name
 #' @return NULL
-#'
-#' @examples  faster_date(dt,"Date")
-#'
-#' @export faster_date
+#' @examples  exampleDataR = data.table::as.data.table(exampleDataR)
+#' exampleDataR = exampleDataR[,dateformat:= date_mdy_ymd(date)]
+#' faster_date(exampleDataR,"dateformat")
 #' @import data.table
+#' @export faster_date
 
 
 faster_date <- function(dt,
@@ -137,7 +155,7 @@ faster_date <- function(dt,
 
 
 
-#' @title gcQuiet
+#' @title gc without printed message
 #' @description gcQuiet
 #' @param quiet  T or F.
 #' @return NULL
@@ -150,10 +168,12 @@ gcQuiet <- function(quiet = TRUE) {
 
 
 #' @title list variables and size
-#' @description list variables and size
+#' @description list variables and size in r memory
 #' @param n top N rows
 #' @return NULL
-#' @examples  lsos()
+#' @examples  data = data.table::as.data.table(exampleDataR)
+#' lsos()
+#' @import data.table
 #' @export lsos
 
 lsos <- function(..., n=10) {
@@ -186,11 +206,11 @@ lsos <- function(..., n=10) {
 }
 
 
-#' @title uniquen
-#' @description uniquen
+#' @title count unique values in a table
+#' @description count unique values in a table
 #' @param data input data table
 #' @return NULL
-#' @examples  uniquen(df)
+#' @examples  uniquen(exampleDataR)
 #' @export uniquen
 
 uniquen<-function(data) sapply(data,function(x)length(unique(x)))

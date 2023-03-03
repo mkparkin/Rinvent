@@ -2,7 +2,7 @@
 % Please edit documentation in R/fundamentals.R
 \name{gcQuiet}
 \alias{gcQuiet}
-\title{gcQuiet}
+\title{gc without printed message}
 \usage{
 gcQuiet(quiet = TRUE)
 }

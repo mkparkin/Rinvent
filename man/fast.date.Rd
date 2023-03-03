@@ -13,5 +13,5 @@ fast.date(x)
 works faster than as.Date.
 }
 \examples{
- fast.date('as.factor('2021-01-01')')
+ fast.date(as.factor('2021-01-01'))
 }

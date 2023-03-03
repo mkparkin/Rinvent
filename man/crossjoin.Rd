@@ -18,5 +18,8 @@ crossjoin()
 table cross join
 }
 \examples{
- crossjoin()
+ exampleDataR = data.table::as.data.table(exampleDataR)
+location_list = exampleDataR[,.N,list(location)]
+item_list = exampleDataR[,.N,list(item)]
+crossjoin(t1=location_list, t2=item_list)
 }

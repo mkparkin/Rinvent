@@ -10,8 +10,9 @@ lsos(..., n = 10)
 \item{n}{top N rows}
 }
 \description{
-list variables and size
+list variables and size in r memory
 }
 \examples{
- lsos()
+ data = data.table::as.data.table(exampleDataR)
+lsos()
 }

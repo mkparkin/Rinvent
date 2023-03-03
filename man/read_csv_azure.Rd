@@ -2,7 +2,7 @@
 % Please edit documentation in R/read_csv_azure.R
 \name{read_csv_azure}
 \alias{read_csv_azure}
-\title{read_csv_azure read csv files from azure blob}
+\title{read csv files from azure blob}
 \usage{
 read_csv_azure(file_path, containerconnection)
 }

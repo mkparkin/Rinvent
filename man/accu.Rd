@@ -2,7 +2,7 @@
 % Please edit documentation in R/fundamentals.R
 \name{accu}
 \alias{accu}
-\title{accu}
+\title{forecast accuracy}
 \usage{
 accu(actual, forecast, outlist = "mean,FBias,WMAPE")
 }
@@ -14,8 +14,8 @@ accu(actual, forecast, outlist = "mean,FBias,WMAPE")
 \item{outlist}{export column. available options: n,mean,sd,CV,R2,DB,FBias,MPE,MAPE,RMSE,MAD,MADP,MASE,RAE,WMAPE}
 }
 \description{
-accu
+measure critical metrics for forecasting
 }
 \examples{
- accu(actual=5,forecast=10,outlist="mean,WMAPE,FBias")
+ accu(actual=105,forecast=100,outlist="mean,WMAPE,FBias")
 }

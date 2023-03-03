@@ -5,19 +5,48 @@
 
 ## Intro Page
 
-## Example functions
+- Package Introduction (<https://mkparkin.github.io/Rinvent/>)
+- First Time Install
+  (<https://mkparkin.github.io/Rinvent/articles/installation.html>)
+- List of Functions
+  (<https://mkparkin.github.io/Rinvent/reference/index.html>)
 
-#### readparquetR
+##### Working with Azure Blob: Parquet, Delta, CSV formats
 
-Objective is to read parquet or delta files with R. Location of the file
-can be local, aws s3 or azure blob There are useful parameters to filter
-the data while reading it
-<https://mkparkin.github.io/Rinvent/reference/readparquetR.html>
+- readparquetR
+  <https://mkparkin.github.io/Rinvent/reference/readparquetR.html>
+- read_csv_azure
+  <https://mkparkin.github.io/Rinvent/reference/read_csv_azure.html>
 
-#### maR
+##### Working with Aws S3: Parquet, Delta formats
 
-Objective: add moving average as a column. Details
-<https://mkparkin.github.io/Rinvent/reference/maR.html>
+- readparquetR
+  <https://mkparkin.github.io/Rinvent/reference/readparquetR.html>
+
+##### Forecast Related
+
+- maR <https://mkparkin.github.io/Rinvent/reference/maR.html>
+- accu <https://mkparkin.github.io/Rinvent/reference/accu.html>
+
+##### Data Review & Engineering
+
+- crossjoin()
+  <https://mkparkin.github.io/Rinvent/reference/crossjoin.html>
+- uniquen() <https://mkparkin.github.io/Rinvent/reference/uniquen.html>
+
+##### Date formatting
+
+- fast.date()
+  <https://mkparkin.github.io/Rinvent/reference/fast.date.html>
+- faster_date()
+  <https://mkparkin.github.io/Rinvent/reference/faster_date.html>
+- week_start()
+  <https://mkparkin.github.io/Rinvent/reference/week_start.html>
+
+##### Others
+
+- lsos() <https://mkparkin.github.io/Rinvent/reference/lsos.html>
+- gcQuiet() <https://mkparkin.github.io/Rinvent/reference/gcQuite.html>
 
 ## Contributing
 

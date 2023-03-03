@@ -2,6 +2,7 @@
 
 export(accu)
 export(crossjoin)
+export(date_mdy_ymd)
 export(fast.date)
 export(faster_date)
 export(gcQuiet)

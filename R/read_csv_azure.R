@@ -1,4 +1,4 @@
-#' @title read_csv_azure read csv files from azure blob
+#' @title read csv files from azure blob
 #' @description read_csv_azure read csv files from azure blob
 #' @param pathtoread blob path to read
 #' @param containerconnection blob connection

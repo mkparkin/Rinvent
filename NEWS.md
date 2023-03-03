@@ -1,34 +1,64 @@
 # Rinvent 1.0.6
-- Release 2023-03-03
-- better documentation
+
+## Documentation
+
+* Release 2023-03-03
+
+* Missing documentation pages are added
 
 # Rinvent 1.0.5
-- Release 2023-03-02
-- fundamental small functions added
-- read csv from azure function is added read_csv_azure
+
+## New Functions
+
+* Release 2023-03-02
+
+* fundamental small functions added
+
+* read csv from azure function is added read_csv_azure
 
 # Rinvent 1.0.4
-- Release 2023-02-27
-- documentation update for blob connection
+
+## Documentation
+
+* Release 2023-02-27
+
+* documentation update for blob connection
 
 # Rinvent 1.0.3
-- Release 2023-02-25
-- Bug fix in readparquetR. It was not reading if we want to read a single file with parquet name
+
+## Bug Fix
+
+* Release 2023-02-25
+
+* Bug fix in readparquetR. It was not reading if we want to read a single file with parquet name
 
 
 # Rinvent 1.0.2
-- Release 2023-02-25
-- New.md added. Example data added
-- maR function is added
+
+## Documentation
+
+* Release 2023-02-25
+
+* New.md added. Example data added
+
+## New Function added
+
+* maR function is added
 
 
 # Rinvent 1.0.1
 
-- Release 2023-02-20
-- Bug fix if there is no checkpoint file
+## Bug fixes
+
+* Release 2023-02-20
+
+* Bug fix if there is no checkpoint file
 
 
 # Rinvent 1.0.0
 
-- Release 2023-02-17
-- first push
+## First Push
+
+* Release 2023-02-17
+
+* first push

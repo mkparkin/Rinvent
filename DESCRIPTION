@@ -2,8 +2,11 @@ Package: Rinvent
 Type: Package
 Title: Useful simple functions for R to work with cloud and data analysis
 Version: 1.0.6
-Author: Koray
-Maintainer: Koray <emailaddress@email.com>
+Author: c(
+  person("korayp"),
+  person("onuru")
+  )
+Maintainer: korayp <emailaddress@email.com>
 Description: Just to post some function that might be helpful for others
 URL: https://github.com/mkparkin/Rinvent/
 BugReports: http://github.com/mkparkin/Rinvent/issues/

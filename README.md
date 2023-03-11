@@ -17,6 +17,8 @@
   <https://mkparkin.github.io/Rinvent/reference/readparquetR.html>
 - read_csv_azure
   <https://mkparkin.github.io/Rinvent/reference/read_csv_azure.html>
+- write_to_blob
+  <https://mkparkin.github.io/Rinvent/reference/write_to_blob.html>
 
 ##### Working with Aws S3: Parquet, Delta formats
 
@@ -42,6 +44,8 @@
   <https://mkparkin.github.io/Rinvent/reference/faster_date.html>
 - week_start()
   <https://mkparkin.github.io/Rinvent/reference/week_start.html>
+- date_to_yyyymmdd()
+  <https://mkparkin.github.io/Rinvent/reference/date_to_yyyymmdd.html>
 
 ##### Others
 

@@ -43,3 +43,24 @@ readparquetR(pathtoread=paste(temp,".parquet"),
              where="cyl==4 & vs!='0'")
 
 ```
+
+
+
+# date_to_yyyymmdd
+``` {r}
+date_to_yyyymmdd("2022-02-28")
+date_to_yyyymmdd("02/28/2022")
+date_to_yyyymmdd("28.02.2022")
+date_to_yyyymmdd("Feb 28, 2022")
+date_to_yyyymmdd("28.02.2022", smart_format = F ,forceformat="%d.%m.%Y" )
+```
+
+
+
+
+
+
+
+
+
+

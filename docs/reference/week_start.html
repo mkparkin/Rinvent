@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">Rinvent</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">1.0.6</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">1.0.7</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -92,87 +92,27 @@
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">exampleDataR</span><span class="op">=</span> <span class="fu">data.table</span><span class="fu">::</span><span class="fu"><a href="https://Rdatatable.gitlab.io/data.table/reference/as.data.table.html" class="external-link">as.data.table</a></span><span class="op">(</span><span class="va">exampleDataR</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">exampleDataR</span> <span class="op">=</span> <span class="va">exampleDataR</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/order.html" class="external-link">order</a></span><span class="op">(</span><span class="va">location</span>,<span class="va">item</span>,<span class="va">date</span><span class="op">)</span><span class="op">]</span></span></span>
-<span class="r-in"><span><span class="va">exampleDataR</span> <span class="op">=</span> <span class="va">exampleDataR</span><span class="op">[</span>,<span class="va">date</span><span class="op">:=</span> <span class="fu"><a href="date_mdy_ymd.html">date_mdy_ymd</a></span><span class="op">(</span><span class="va">date</span><span class="op">)</span><span class="op">]</span></span></span>
+<span class="r-in"><span><span class="va">exampleDataR</span> <span class="op">=</span> <span class="va">exampleDataR</span><span class="op">[</span>,<span class="va">date</span><span class="op">:=</span> <span class="fu">date_mdy_ymd</span><span class="op">(</span><span class="va">date</span><span class="op">)</span><span class="op">]</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in date_mdy_ymd(date):</span> could not find function "date_mdy_ymd"</span>
 <span class="r-in"><span><span class="va">exampleDataR</span><span class="op">[</span>,<span class="va">week_start_date</span><span class="op">:=</span> <span class="fu">week_start</span><span class="op">(</span><span class="va">date</span><span class="op">)</span><span class="op">]</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     location   item       date sales week_start_date</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  1:   ankara    tea 1920-04-23    22      1920-04-18</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  2:   ankara    tea 1920-04-24    30      1920-04-18</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  3:   ankara    tea 1920-04-25    29      1920-04-25</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  4:   ankara    tea 1920-04-26    34      1920-04-25</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  5:   ankara    tea 1920-04-27     9      1920-04-25</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  6:   ankara    tea 1920-04-28    15      1920-04-25</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  7:   ankara    tea 1920-04-29    40      1920-04-25</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  8:   ankara    tea 1920-04-30     7      1920-04-25</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  9:   ankara    tea 1920-05-01    26      1920-04-25</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10:   ankara    tea 1920-05-10    39      1920-05-09</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11:   ankara    tea 1920-05-11    39      1920-05-09</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12:   ankara    tea 1920-05-12    12      1920-05-09</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13:   ankara    tea 1920-05-13     2      1920-05-09</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14:   ankara    tea 1920-05-14    29      1920-05-09</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15:   ankara    tea 1920-05-15     7      1920-05-09</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16:   ankara    tea 1920-05-16     0      1920-05-16</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17:   ankara    tea 1920-05-17    35      1920-05-16</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18:   ankara    tea 1920-05-18    34      1920-05-16</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19:   ankara    tea 1920-05-19    20      1920-05-16</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20:   ankara    tea 1920-05-02    25      1920-05-02</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21:   ankara    tea 1920-05-20     2      1920-05-16</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 22:   ankara    tea 1920-05-21    30      1920-05-16</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23:   ankara    tea 1920-05-22    30      1920-05-16</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 24:   ankara    tea 1920-05-03    30      1920-05-02</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 25:   ankara    tea 1920-05-04     0      1920-05-02</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 26:   ankara    tea 1920-05-05     1      1920-05-02</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 27:   ankara    tea 1920-05-06     4      1920-05-02</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 28:   ankara    tea 1920-05-07    35      1920-05-02</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 29:   ankara    tea 1920-05-08    20      1920-05-02</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 30:   ankara    tea 1920-05-09    28      1920-05-09</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 31: istanbul coffee 1923-10-29    27      1923-10-28</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 32: istanbul coffee 1923-10-30    31      1923-10-28</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 33: istanbul coffee 1923-10-31    31      1923-10-28</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 34: istanbul coffee 1923-11-01    22      1923-10-28</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 35: istanbul coffee 1923-11-10     6      1923-11-04</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 36: istanbul coffee 1923-11-11    37      1923-11-11</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 37: istanbul coffee 1923-11-12    22      1923-11-11</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 38: istanbul coffee 1923-11-13    32      1923-11-11</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 39: istanbul coffee 1923-11-14    25      1923-11-11</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 40: istanbul coffee 1923-11-15    22      1923-11-11</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 41: istanbul coffee 1923-11-16    20      1923-11-11</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 42: istanbul coffee 1923-11-17     3      1923-11-11</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 43: istanbul coffee 1923-11-18    39      1923-11-18</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 44: istanbul coffee 1923-11-19    26      1923-11-18</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 45: istanbul coffee 1923-11-02     3      1923-10-28</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 46: istanbul coffee 1923-11-20    21      1923-11-18</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 47: istanbul coffee 1923-11-21    27      1923-11-18</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 48: istanbul coffee 1923-11-22     1      1923-11-18</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 49: istanbul coffee 1923-11-23    10      1923-11-18</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 50: istanbul coffee 1923-11-24    33      1923-11-18</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 51: istanbul coffee 1923-11-25    23      1923-11-25</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 52: istanbul coffee 1923-11-26    28      1923-11-25</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 53: istanbul coffee 1923-11-27     6      1923-11-25</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 54: istanbul coffee 1923-11-03    28      1923-10-28</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 55: istanbul coffee 1923-11-04    30      1923-11-04</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 56: istanbul coffee 1923-11-05    30      1923-11-04</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 57: istanbul coffee 1923-11-06    35      1923-11-04</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 58: istanbul coffee 1923-11-07    32      1923-11-04</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 59: istanbul coffee 1923-11-08     2      1923-11-04</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 60: istanbul coffee 1923-11-09     9      1923-11-04</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     location   item       date sales week_start_date</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in charToDate(x):</span> character string is not in a standard unambiguous format</span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">exampleDataR</span>,<span class="fl">15</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     location item       date sales week_start_date</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  1:   ankara  tea 1920-04-23    22      1920-04-18</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  2:   ankara  tea 1920-04-24    30      1920-04-18</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  3:   ankara  tea 1920-04-25    29      1920-04-25</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  4:   ankara  tea 1920-04-26    34      1920-04-25</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  5:   ankara  tea 1920-04-27     9      1920-04-25</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  6:   ankara  tea 1920-04-28    15      1920-04-25</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  7:   ankara  tea 1920-04-29    40      1920-04-25</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  8:   ankara  tea 1920-04-30     7      1920-04-25</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  9:   ankara  tea 1920-05-01    26      1920-04-25</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10:   ankara  tea 1920-05-10    39      1920-05-09</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11:   ankara  tea 1920-05-11    39      1920-05-09</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12:   ankara  tea 1920-05-12    12      1920-05-09</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13:   ankara  tea 1920-05-13     2      1920-05-09</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14:   ankara  tea 1920-05-14    29      1920-05-09</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15:   ankara  tea 1920-05-15     7      1920-05-09</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     location item      date sales</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  1:   ankara  tea 4/23/1920    22</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  2:   ankara  tea 4/24/1920    30</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  3:   ankara  tea 4/25/1920    29</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  4:   ankara  tea 4/26/1920    34</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  5:   ankara  tea 4/27/1920     9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  6:   ankara  tea 4/28/1920    15</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  7:   ankara  tea 4/29/1920    40</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  8:   ankara  tea 4/30/1920     7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  9:   ankara  tea  5/1/1920    26</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10:   ankara  tea 5/10/1920    39</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11:   ankara  tea 5/11/1920    39</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12:   ankara  tea 5/12/1920    12</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13:   ankara  tea 5/13/1920     2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14:   ankara  tea 5/14/1920    29</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15:   ankara  tea 5/15/1920     7</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>

@@ -46,6 +46,9 @@
     <loc>https://mkparkin.github.io/Rinvent/reference/date_mdy_ymd.html</loc>
   </url>
   <url>
+    <loc>https://mkparkin.github.io/Rinvent/reference/date_to_yyyymmdd.html</loc>
+  </url>
+  <url>
     <loc>https://mkparkin.github.io/Rinvent/reference/exampleDataR.html</loc>
   </url>
   <url>
@@ -77,5 +80,8 @@
   </url>
   <url>
     <loc>https://mkparkin.github.io/Rinvent/reference/week_start.html</loc>
+  </url>
+  <url>
+    <loc>https://mkparkin.github.io/Rinvent/reference/write_to_blob.html</loc>
   </url>
 </urlset>

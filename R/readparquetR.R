@@ -251,12 +251,43 @@ readparquetR = function(pathtoread,
 
           print("downloading..")
 
-          AzureStor::multidownload_blob(containerconnection,
-                                        src = file.path(file.path(pathtoread
-                                        ),
-                                        paste0("*.*",
-                                               "parquet")),
-                                        dest = dest_path)
+          files_to_download = AzureStor::list_blobs(containerconnection,
+                                                  dir=pathtoread,
+                                                  recursive = T,
+                                                  prefix = "*.parquet"
+                                                  )$name
+
+          files_to_download = files_to_download[files_to_download %like% ".parquet"]
+
+          if(length(partition)>0){
+            pp=partition[1]
+            partpartlist= c()
+            for(pp in partition){
+              partpartlist_sub = files_to_download[files_to_download%like% pp]
+              partpartlist=c(partpartlist,partpartlist_sub)
+            }
+
+            files_to_download = copy(partpartlist)
+          }
+
+
+
+          ftd = files_to_download[1]
+
+          for (ftd in files_to_download) {
+
+            partition_path <- basename(dirname(ftd))
+            if (!dir.exists(file.path(dest_path, partition_path))) {
+              dir.create(file.path(dest_path, partition_path), recursive = TRUE)
+            }
+
+            AzureStor::multidownload_blob(containerconnection,
+                                          src = ftd,
+                                          dest = file.path(dest_path,
+                                                           partition_path,
+                                                           basename(ftd)),
+                                          overwrite = TRUE)
+          }
 
           print("download done")
           print(dest_path)
@@ -382,7 +413,7 @@ readparquetR = function(pathtoread,
                           recursive = TRUE
     )
     print(pathtoread)
-    if(length(allfiles)==0){print("there is no row, make sure path is correct!")}
+    if(length(allfiles)==0){print("there is no row, make sure path, filelocation is correct!")}
 
     #handle delta format
 
@@ -478,7 +509,6 @@ readparquetR = function(pathtoread,
       }
 
       allfiles = copy(partpartlist)
-      #allfiles=allfiles[allfiles%like% partition]
     }
 
     if(sample){
@@ -503,9 +533,11 @@ readparquetR = function(pathtoread,
                                                                         df = data.table::as.data.table(arrow::read_parquet(x))
                                                                       }
                                                                       if(add_part_names){
-                                                                        dirnames = stringr::str_replace(x,
-                                                                                                        pattern = pathtoread,
-                                                                                                        "")
+
+
+                                                                        dirnames = stringr::str_remove(x,
+                                                                                                       str_replace_all(pathtoread, "\\\\",
+                                                                                                                       "\\\\\\\\"))
                                                                         dirnames= (strsplit(dirnames,'/'))
                                                                         i=1
                                                                         for(i in 1:(length(dirnames[[1]])-2)){
@@ -513,14 +545,17 @@ readparquetR = function(pathtoread,
                                                                           name_at= (strsplit(name_at,'='))
                                                                           name_at_1 = name_at[[1]][1]
                                                                           name_at_2 = name_at[[1]][2]
+
+                                                                          if(is.na(name_at_2)){
+                                                                            print("no partition folder, so dummy column created")
+                                                                          }
+
                                                                           df=as.data.table(df)
                                                                           eval(parse(text=paste0("df[,",name_at_1,
                                                                                                  ":='",name_at_2,"']")))
 
 
                                                                         }
-
-
 
                                                                       }
 
@@ -531,8 +566,6 @@ readparquetR = function(pathtoread,
                                                                       if(sample & nrow(df)>0){
                                                                         df=df[1]
                                                                       }
-
-
 
 
                                                                       df

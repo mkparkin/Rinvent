@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">Rinvent</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">1.0.6</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">1.0.7</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -95,70 +95,10 @@
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span> <span class="va">exampleDataR</span> <span class="op">=</span> <span class="fu">data.table</span><span class="fu">::</span><span class="fu"><a href="https://Rdatatable.gitlab.io/data.table/reference/as.data.table.html" class="external-link">as.data.table</a></span><span class="op">(</span><span class="va">exampleDataR</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="va">exampleDataR</span> <span class="op">=</span> <span class="va">exampleDataR</span><span class="op">[</span>,<span class="va">dateformat</span><span class="op">:=</span> <span class="fu"><a href="date_mdy_ymd.html">date_mdy_ymd</a></span><span class="op">(</span><span class="va">date</span><span class="op">)</span><span class="op">]</span></span></span>
+<span class="r-in"><span><span class="va">exampleDataR</span> <span class="op">=</span> <span class="va">exampleDataR</span><span class="op">[</span>,<span class="va">dateformat</span><span class="op">:=</span> <span class="fu">date_mdy_ymd</span><span class="op">(</span><span class="va">date</span><span class="op">)</span><span class="op">]</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in date_mdy_ymd(date):</span> could not find function "date_mdy_ymd"</span>
 <span class="r-in"><span><span class="fu">faster_date</span><span class="op">(</span><span class="va">exampleDataR</span>,<span class="st">"dateformat"</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     location   item       date sales dateformat</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  1: istanbul coffee 10/29/1923    27 1923-10-29</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  2: istanbul coffee 10/30/1923    31 1923-10-30</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  3: istanbul coffee 10/31/1923    31 1923-10-31</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  4: istanbul coffee  11/1/1923    22 1923-11-01</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  5: istanbul coffee  11/2/1923     3 1923-11-02</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  6: istanbul coffee  11/3/1923    28 1923-11-03</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  7: istanbul coffee  11/4/1923    30 1923-11-04</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  8: istanbul coffee  11/5/1923    30 1923-11-05</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  9: istanbul coffee  11/6/1923    35 1923-11-06</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10: istanbul coffee  11/7/1923    32 1923-11-07</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11: istanbul coffee  11/8/1923     2 1923-11-08</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12: istanbul coffee  11/9/1923     9 1923-11-09</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13: istanbul coffee 11/10/1923     6 1923-11-10</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14: istanbul coffee 11/11/1923    37 1923-11-11</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15: istanbul coffee 11/12/1923    22 1923-11-12</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16: istanbul coffee 11/13/1923    32 1923-11-13</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17: istanbul coffee 11/14/1923    25 1923-11-14</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18: istanbul coffee 11/15/1923    22 1923-11-15</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19: istanbul coffee 11/16/1923    20 1923-11-16</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20: istanbul coffee 11/17/1923     3 1923-11-17</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21: istanbul coffee 11/18/1923    39 1923-11-18</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 22: istanbul coffee 11/19/1923    26 1923-11-19</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23: istanbul coffee 11/20/1923    21 1923-11-20</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 24: istanbul coffee 11/21/1923    27 1923-11-21</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 25: istanbul coffee 11/22/1923     1 1923-11-22</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 26: istanbul coffee 11/23/1923    10 1923-11-23</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 27: istanbul coffee 11/24/1923    33 1923-11-24</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 28: istanbul coffee 11/25/1923    23 1923-11-25</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 29: istanbul coffee 11/26/1923    28 1923-11-26</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 30: istanbul coffee 11/27/1923     6 1923-11-27</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 31:   ankara    tea  4/23/1920    22 1920-04-23</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 32:   ankara    tea  4/24/1920    30 1920-04-24</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 33:   ankara    tea  4/25/1920    29 1920-04-25</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 34:   ankara    tea  4/26/1920    34 1920-04-26</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 35:   ankara    tea  4/27/1920     9 1920-04-27</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 36:   ankara    tea  4/28/1920    15 1920-04-28</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 37:   ankara    tea  4/29/1920    40 1920-04-29</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 38:   ankara    tea  4/30/1920     7 1920-04-30</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 39:   ankara    tea   5/1/1920    26 1920-05-01</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 40:   ankara    tea   5/2/1920    25 1920-05-02</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 41:   ankara    tea   5/3/1920    30 1920-05-03</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 42:   ankara    tea   5/4/1920     0 1920-05-04</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 43:   ankara    tea   5/5/1920     1 1920-05-05</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 44:   ankara    tea   5/6/1920     4 1920-05-06</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 45:   ankara    tea   5/7/1920    35 1920-05-07</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 46:   ankara    tea   5/8/1920    20 1920-05-08</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 47:   ankara    tea   5/9/1920    28 1920-05-09</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 48:   ankara    tea  5/10/1920    39 1920-05-10</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 49:   ankara    tea  5/11/1920    39 1920-05-11</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 50:   ankara    tea  5/12/1920    12 1920-05-12</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 51:   ankara    tea  5/13/1920     2 1920-05-13</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 52:   ankara    tea  5/14/1920    29 1920-05-14</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 53:   ankara    tea  5/15/1920     7 1920-05-15</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 54:   ankara    tea  5/16/1920     0 1920-05-16</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 55:   ankara    tea  5/17/1920    35 1920-05-17</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 56:   ankara    tea  5/18/1920    34 1920-05-18</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 57:   ankara    tea  5/19/1920    20 1920-05-19</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 58:   ankara    tea  5/20/1920     2 1920-05-20</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 59:   ankara    tea  5/21/1920    30 1920-05-21</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 60:   ankara    tea  5/22/1920    30 1920-05-22</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     location   item       date sales dateformat</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in data.table::setnames(dt, dateCol_a, "SuperDummyDate"):</span> Items of 'old' not found in column names: [dateformat]. Consider skip_absent=TRUE.</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>

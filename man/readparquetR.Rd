@@ -7,7 +7,7 @@
 readparquetR(
   pathtoread,
   where = "",
-  partition = "",
+  partition = NULL,
   collist = "",
   sample = F,
   samplesizecount = 3,

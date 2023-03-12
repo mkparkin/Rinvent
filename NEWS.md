@@ -1,9 +1,16 @@
+# Rinvent 1.0.8
+
+## Documentation
+
+* Release 2023-03-12
+* readparquetR: default value fix for partition parameter. "" to NULL
+
+
 # Rinvent 1.0.7
 
 ## Documentation
 
 * Release 2023-03-11
-
 * readparquetR: partitioned parquet files can be read now
 * readparquetR: bug fix in add_part_names parameter
 * readparquetR: smart download in parquet format if partition is filled

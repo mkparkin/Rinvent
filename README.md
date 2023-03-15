@@ -20,6 +20,7 @@
 ##### Working with Aws S3: Parquet, Delta formats
 
 - [readparquetR](https://mkparkin.github.io/Rinvent/reference/readparquetR.html)
+- [write_to_S3](https://mkparkin.github.io/Rinvent/reference/write_to_S3.html)
 
 ##### Forecast Related
 

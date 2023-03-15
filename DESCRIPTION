@@ -7,6 +7,9 @@ Author: c(
   person("onuru")
   )
 Maintainer: korayp <emailaddress@email.com>
+Version: 1.0.5
+Author: Koray
+Maintainer: Koray Parkin <emailaddress@email.com>
 Description: Just to post some function that might be helpful for others
 URL: https://github.com/mkparkin/Rinvent/
 BugReports: http://github.com/mkparkin/Rinvent/issues/

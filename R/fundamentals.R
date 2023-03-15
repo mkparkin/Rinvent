@@ -1,27 +1,19 @@
-#' Convert date string to YYYY-MM-DD format
-#'
-#' This function attempts to detect the format of a date string and convert it to
-#' the YYYY-MM-DD format. It supports a variety of commonly used date formats.
-#'
+#' @title Convert date string to YYYY-MM-DD format
+#' @description This function attempts to detect the format of a date string and convert it to the YYYY-MM-DD format.
 #' @param date_str A character string representing a date in an unknown format.
-#' @param forceformat  to make this effective, smart_format should be False c("%Y-%m-%d", "%m/%d/%Y", "%d/%m/%Y", "%m-%d-%Y", "%d-%m-%Y", "%Y/%m/%d", "%Y.%m.%d", "%d.%m.%Y", "%Y%m%d", "%b %d, %Y")
+#' @param forceformat  to make this effective, smart_format should be False
 #' @param smart_format if it is T, then it will try to detect format. otherwise force format
-#' @return A character string representing the date in the YYYY-MM-DD format, or
-#'         NA if the date string could not be converted.
-#' @examples
-#' date_to_yyyymmdd("2022-02-28")
-#' date_to_yyyymmdd("02/28/2022")
-#' date_to_yyyymmdd("28.02.2022")
-#' date_to_yyyymmdd("Feb 28, 2022")
-#'
-#' @export
-date_to_yyyymmdd <- function(date_str, smart_format=T, forceformat="%Y.%m.%d") {
+#' @examples date_to_yyyymmdd('2022-02-28')
+#' @examples date_to_yyyymmdd('02/28/2022')
+#' @examples date_to_yyyymmdd('28.02.2022')
+#' @examples date_to_yyyymmdd('Feb 28, 2022')
+#' @export date_to_yyyymmdd
+
+date_to_yyyymmdd <- function(date_str, smart_format=T, forceformat='%Y.%m.%d') {
   output <- NA
 
   if(smart_format){
-  # Define a list of commonly used date formats
-  date_formats <- c("%Y-%m-%d", "%m/%d/%Y", "%d/%m/%Y", "%m-%d-%Y", "%d-%m-%Y", "%Y/%m/%d", "%Y.%m.%d", "%d.%m.%Y", "%Y%m%d", "%b %d, %Y")
-  # Loop through each date format and try to convert the date string to YYYY-MM-DD
+  date_formats <- c('%Y-%m-%d', '%m/%d/%Y', '%d/%m/%Y', '%m-%d-%Y', '%d-%m-%Y', '%Y/%m/%d', '%Y.%m.%d', '%d.%m.%Y', '%Y%m%d', '%b %d, %Y')
   format_str=date_formats[7]
   for (format_str in date_formats) {
     try_date <- try(as.Date(date_str, format = format_str))
@@ -29,7 +21,6 @@ date_to_yyyymmdd <- function(date_str, smart_format=T, forceformat="%Y.%m.%d") {
       output=try_date
     }
   }
-
   }else{
     output = try(as.Date(date_str, format = forceformat))
   }

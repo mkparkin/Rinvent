@@ -1,6 +1,6 @@
 # Rinvent 1.0.9
 - Release 2023-03-15
-- s3save_with_tryCatch function is added. This function provides a more robust saving mechanism, especially when writing out large files to Amazon S3.
+- write_to_S3 function is added. This function provides a more robust saving mechanism, especially when writing out large files to Amazon S3.
 
 # Rinvent 1.0.8
 

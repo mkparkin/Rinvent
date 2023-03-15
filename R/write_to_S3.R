@@ -6,14 +6,14 @@
 #'
 #' @return NULL
 #'
-#' @examples s3save_with_tryCatch(df = results_df, format = "csv", object = file.path("target_s3_path.csv"), bucket = "bucket_name")
+#' @examples write_to_S3(df = results_df, format = "csv", object = file.path("target_s3_path.csv"), bucket = "bucket_name")
 #'
-#' @export s3save_with_tryCatch
+#' @export write_to_S3
 #' @import aws.s3
 #' @import data.table
 #' @import arrow
 
-s3save_with_tryCatch <- function(df, format, object, bucket){
+write_to_S3 <- function(df, format, object, bucket){
   
   # this function provides a more robust saving mechanism
   # when writing large files to Amazon S3

@@ -51,9 +51,6 @@
 
 ## Bug Fix
 
-* Release 2023-02-25
-
-* Bug fix in readparquetR. It was not reading if we want to read a single file with parquet name
 - Release 2023-02-25
 - Bug fix in readparquetR. It was not reading if we want to read a single file with parquet name.
 

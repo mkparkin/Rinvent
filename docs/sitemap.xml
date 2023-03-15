@@ -84,4 +84,7 @@
   <url>
     <loc>https://mkparkin.github.io/Rinvent/reference/write_to_blob.html</loc>
   </url>
+  <url>
+    <loc>https://mkparkin.github.io/Rinvent/reference/write_to_S3.html</loc>
+  </url>
 </urlset>

@@ -1,3 +1,7 @@
+# Rinvent 1.0.9
+- Release 2023-03-15
+- write_to_S3 function is added. This function provides a more robust saving mechanism, especially when writing out large files to Amazon S3.
+
 # Rinvent 1.0.8
 
 ## Documentation
@@ -47,9 +51,8 @@
 
 ## Bug Fix
 
-* Release 2023-02-25
-
-* Bug fix in readparquetR. It was not reading if we want to read a single file with parquet name
+- Release 2023-02-25
+- Bug fix in readparquetR. It was not reading if we want to read a single file with parquet name.
 
 
 # Rinvent 1.0.2

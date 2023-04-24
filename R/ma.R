@@ -15,7 +15,7 @@
 
 
 
-maR <- function(value, period_count,timelag=1,align="right",gap=1) {
+maR <- function(value, period_count, align="right", gap=1) {
 
   nk <- c(seq.int(pmin(period_count, length(value))), rep(period_count, pmax(0, length(value) - period_count)))
   lenght_nk = length(nk)

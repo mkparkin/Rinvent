@@ -1,3 +1,7 @@
+# Rinvent 1.1.0
+- Release 2023-04-24
+- redundant parameter removed from maR function
+
 # Rinvent 1.0.9
 - Release 2023-03-15
 - write_to_S3 function is added. This function provides a more robust saving mechanism, especially when writing out large files to Amazon S3.

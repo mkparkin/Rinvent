@@ -4,7 +4,7 @@
 \alias{maR}
 \title{moving average of a column}
 \usage{
-maR(value, period_count, timelag = 1, align = "right", gap = 1)
+maR(value, period_count, align = "right", gap = 1)
 }
 \arguments{
 \item{value}{column name to take average}

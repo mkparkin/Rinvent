@@ -159,9 +159,15 @@ readparquetR = function(pathtoread,
             )
           }
         }
+        
+        if(nrow(data_part_add_master) >0 ){
 
-        data_part_final = data_part_add_master[!x %in%
+          data_part_final = data_part_add_master[!x %in%
                                                  data_part_remove_master$x ]
+        
+        }else{
+          data_part_final = data.table()
+        }
 
         checkpointlist = list.files(dest_path,
                                     pattern = ".checkpoint.parquet",
@@ -444,9 +450,15 @@ readparquetR = function(pathtoread,
           )
         }
       }
-
-      data_part_final = data_part_add_master[!x %in%
-                                               data_part_remove_master$x ]
+      
+      
+      if(nrow(data_part_add_master)>0){
+        data_part_final = data_part_add_master[!x %in%
+                                                 data_part_remove_master$x ]
+      }else{
+        data_part_final = data.table()
+      }
+      
 
       #last checkpoint
       checkpointlist = list.files(pathtoread,

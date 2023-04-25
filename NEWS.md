@@ -1,4 +1,8 @@
 # Rinvent 1.1.0
+- Release 2023-04-25
+- Bug fix: readparquetR when we read the file in checkpoint date, it gives an error. now fixed 
+
+# Rinvent 1.1.0
 - Release 2023-04-24
 - redundant parameter removed from maR function
 

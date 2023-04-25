@@ -1,4 +1,4 @@
-# Rinvent 1.1.0
+# Rinvent 1.1.1
 - Release 2023-04-25
 - Bug fix: readparquetR when we read the file in checkpoint date, it gives an error. now fixed 
 

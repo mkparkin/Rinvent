@@ -210,6 +210,18 @@ readparquetR = function(pathtoread,
 
         downloadtolocallist = data_part_final$x
       }
+      
+      if(length(partition)>0){
+        pp=partition[1]
+        partpartlist= c()
+        for(pp in partition){
+          partpartlist_sub = downloadtolocallist[downloadtolocallist%like% pp]
+          partpartlist=c(partpartlist,partpartlist_sub)
+        }
+        
+        downloadtolocallist = copy(partpartlist)
+      }
+      
 
       dd = downloadtolocallist[1]
       for(dd in downloadtolocallist){

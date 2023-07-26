@@ -9,9 +9,6 @@
 #' @param containerconnection The connection to the Azure Blob storage container
 #' @param blobfilepath The path within the container to write the file (default is the root of the container)
 #' @param format The format to use when writing the data (one of "parquet", "rds", or "csv")
-#'
-#' @return NULL
-#'
 #' @examples
 #' write_to_blob(datatable,
 #'               savename = "data.parquet",

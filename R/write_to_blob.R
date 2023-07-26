@@ -20,6 +20,7 @@
 #'
 #' @import AzureStor
 #' @import arrow
+#' @export write_to_blob
 
 write_to_blob = function(data,
                          templocalpath="default",

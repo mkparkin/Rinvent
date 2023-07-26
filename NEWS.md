@@ -1,3 +1,7 @@
+# Rinvent 1.1.3
+- Release 2023-07-26
+- Error fix: write_to_blob was not working, fixed. 
+
 # Rinvent 1.1.2
 - Release 2023-07-19
 - Improvement: readparquetR, when we use partition parameter it will only download the related file. less cloud cost and fast read, enjoy! 

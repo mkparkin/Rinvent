@@ -24,8 +24,19 @@ write_to_blob = function(data,
                          savename="my_df.parquet",
                          containerconnection=NULL,
                          blobfilepath="trial",
-                         format="parquet") {
-
+                         format="parquet",
+                         overwrite = TRUE) {
+  
+  # create an alert if file exist in the blob and not want to overwrite
+  if (overwrite == FALSE) {
+        filelistincloud = AzureStor::list_blobs(containerconnection, 
+        dir = blobfilepath, prefix = savename, recursive = T)$name
+		if ( !is.null(filelistincloud )){
+      print("file exists in the path and you have selected to not overwrite")
+      break
+    }		
+  }
+  
   # create a temporary local directory if one wasn't provided
   if(templocalpath == "default") {
     templocalpath = file.path(tempdir(), as.numeric(Sys.time()))

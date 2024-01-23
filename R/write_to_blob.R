@@ -9,11 +9,14 @@
 #' @param containerconnection The connection to the Azure Blob storage container
 #' @param blobfilepath The path within the container to write the file (default is the root of the container)
 #' @param format The format to use when writing the data (one of "parquet", "rds", or "csv")
+#' @param overwrite overwrite existing file (one of "parquet", "rds", or "csv")
 #' @examples
 #' write_to_blob(datatable,
 #'               savename = "data.parquet",
 #'               containerconnection = mycontainer,
-#'               blobfilepath = file.path("mainfolder", "subfolder"))
+#'               blobfilepath = file.path("mainfolder", "subfolder"),
+#'               overwrite=FALSE
+#'               )
 #'
 #' @import AzureStor
 #' @import arrow
@@ -24,8 +27,22 @@ write_to_blob = function(data,
                          savename="my_df.parquet",
                          containerconnection=NULL,
                          blobfilepath="trial",
-                         format="parquet") {
+                         format="parquet",
+                         overwrite=FALSE) {
 
+  # create an alert if file exist in the blob and not want to overwrite
+  if (overwrite == FALSE) {
+    filelistincloud = AzureStor::list_blobs(containerconnection, 
+                                            dir = blobfilepath, 
+                                            prefix = savename, 
+                                            recursive = T)$name
+    if ( !is.null(filelistincloud )){
+      print("file exists in the path and you have selected to not overwrite. change overwrite=T if you want")
+      break
+    }		
+  }
+  
+  
   # create a temporary local directory if one wasn't provided
   if(templocalpath == "default") {
     templocalpath = file.path(tempdir(), as.numeric(Sys.time()))

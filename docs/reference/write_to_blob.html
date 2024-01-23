@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">Rinvent</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">1.1.3</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">1.1.4</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -84,7 +84,8 @@
 <span>  savename <span class="op">=</span> <span class="st">"my_df.parquet"</span>,</span>
 <span>  containerconnection <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  blobfilepath <span class="op">=</span> <span class="st">"trial"</span>,</span>
-<span>  format <span class="op">=</span> <span class="st">"parquet"</span></span>
+<span>  format <span class="op">=</span> <span class="st">"parquet"</span>,</span>
+<span>  overwrite <span class="op">=</span> <span class="cn">FALSE</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
 
@@ -113,6 +114,10 @@
 <dt>format</dt>
 <dd><p>The format to use when writing the data (one of "parquet", "rds", or "csv")</p></dd>
 
+
+<dt>overwrite</dt>
+<dd><p>overwrite existing file (one of "parquet", "rds", or "csv")</p></dd>
+
 </dl></div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
@@ -124,8 +129,10 @@
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">write_to_blob</span><span class="op">(</span><span class="va">datatable</span>,</span></span>
 <span class="r-in"><span>              savename <span class="op">=</span> <span class="st">"data.parquet"</span>,</span></span>
 <span class="r-in"><span>              containerconnection <span class="op">=</span> <span class="va">mycontainer</span>,</span></span>
-<span class="r-in"><span>              blobfilepath <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="st">"mainfolder"</span>, <span class="st">"subfolder"</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in write_to_blob(datatable, savename = "data.parquet", containerconnection = mycontainer,     blobfilepath = file.path("mainfolder", "subfolder")):</span> could not find function "write_to_blob"</span>
+<span class="r-in"><span>              blobfilepath <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="st">"mainfolder"</span>, <span class="st">"subfolder"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>              overwrite<span class="op">=</span><span class="cn">FALSE</span></span></span>
+<span class="r-in"><span>              <span class="op">)</span></span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in write_to_blob(datatable, savename = "data.parquet", containerconnection = mycontainer,     blobfilepath = file.path("mainfolder", "subfolder"), overwrite = FALSE):</span> unused argument (overwrite = FALSE)</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>

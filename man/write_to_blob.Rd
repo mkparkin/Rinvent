@@ -10,7 +10,8 @@ write_to_blob(
   savename = "my_df.parquet",
   containerconnection = NULL,
   blobfilepath = "trial",
-  format = "parquet"
+  format = "parquet",
+  overwrite = FALSE
 )
 }
 \arguments{
@@ -25,6 +26,8 @@ write_to_blob(
 \item{blobfilepath}{The path within the container to write the file (default is the root of the container)}
 
 \item{format}{The format to use when writing the data (one of "parquet", "rds", or "csv")}
+
+\item{overwrite}{overwrite existing file (one of "parquet", "rds", or "csv")}
 }
 \description{
 Writes data to an Azure Blob storage container using the specified format
@@ -36,6 +39,8 @@ Write data to an Azure Blob storage container
 write_to_blob(datatable,
               savename = "data.parquet",
               containerconnection = mycontainer,
-              blobfilepath = file.path("mainfolder", "subfolder"))
+              blobfilepath = file.path("mainfolder", "subfolder"),
+              overwrite=FALSE
+              )
 
 }

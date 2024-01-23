@@ -26,7 +26,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">Rinvent</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">1.1.3</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">1.1.4</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -94,7 +94,7 @@
   <main id="main" class="col-md-9"><div class="page-header">
       <img src="" class="logo" alt=""><h1>Sample-Usage</h1>
             
-            <h4 data-toc-skip class="date">2023-07-26</h4>
+            <h4 data-toc-skip class="date">2024-01-23</h4>
       
       <small class="dont-index">Source: <a href="http://github.com/mkparkin/Rinvent/blob/HEAD/vignettes/articles/Sample-Usage.Rmd" class="external-link"><code>vignettes/articles/Sample-Usage.Rmd</code></a></small>
       <div class="d-none name"><code>Sample-Usage.Rmd</code></div>
@@ -123,7 +123,7 @@
 </h2>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/mkparkin/Rinvent/" class="external-link">Rinvent</a></span><span class="op">)</span></span>
-<span><span class="va">exampleDataR</span><span class="op">=</span> <span class="fu">data.table</span><span class="fu">::</span><span class="fu"><a href="https://Rdatatable.gitlab.io/data.table/reference/as.data.table.html" class="external-link">as.data.table</a></span><span class="op">(</span><span class="va">exampleDataR</span><span class="op">)</span></span>
+<span><span class="va">exampleDataR</span><span class="op">=</span> <span class="fu">data.table</span><span class="fu">::</span><span class="fu"><a href="https://rdatatable.gitlab.io/data.table/reference/as.data.table.html" class="external-link">as.data.table</a></span><span class="op">(</span><span class="va">exampleDataR</span><span class="op">)</span></span>
 <span><span class="va">exampleDataR</span> <span class="op">=</span> <span class="va">exampleDataR</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/order.html" class="external-link">order</a></span><span class="op">(</span><span class="va">location</span>,<span class="va">item</span>,<span class="va">date</span><span class="op">)</span><span class="op">]</span></span>
 <span><span class="va">exampleDataR</span><span class="op">[</span>,<span class="va">ma5</span><span class="op">:=</span> <span class="fu"><a href="../reference/maR.html">maR</a></span><span class="op">(</span><span class="va">sales</span>,<span class="fl">4</span><span class="op">)</span>,<span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="va">location</span>,<span class="va">item</span><span class="op">)</span><span class="op">]</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">exampleDataR</span>,<span class="fl">10</span><span class="op">)</span></span>

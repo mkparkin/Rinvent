@@ -1,3 +1,7 @@
+# Rinvent 1.1.5
+- Release 2024-01-25
+- Bug fix: overwrite parameter did not work when set to F. Now fixed.
+
 # Rinvent 1.1.4
 - Release 2024-01-23
 - New Parameter: overwrite file parameter added to write_to_blob. thanks to @mustafasahininvent 

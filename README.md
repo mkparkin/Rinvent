@@ -48,17 +48,19 @@
 
 **Checklist before MR**
 
-1.  clone the repo
+1.  Clone the repo
 
-2.  Increase version number in DESCRIPTION
+2.  Do your development in your branch
 
-3.  Add what you did in NEWS.md release notes
+3.  Increase version number in DESCRIPTION
 
-4.  For the documentation, you can use “devtools::document()”
+4.  Add what you did in NEWS.md release notes
 
-5.  Run devtools::build_readme() to update README.md
+5.  For the documentation, you can use “devtools::document()”
 
-6.  pkgdown::build_site() for website update
+6.  Run devtools::build_readme() to update README.md
+
+7.  pkgdown::build_site() for website update
 
 This is it. to make sure it is working, you can click on “Build” in
 RStudio top menu then click “Clean and Rebuild”

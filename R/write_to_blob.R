@@ -30,43 +30,44 @@ write_to_blob = function(data,
                          format="parquet",
                          overwrite=FALSE) {
 
-  # create an alert if file exist in the blob and not want to overwrite
+  # If the file already exists in the specified path and overwrite is FALSE, then do not overwrite the file.
+  # If overwrite is set to TRUE, then overwrite the existing file.
   if (overwrite == FALSE) {
     filelistincloud = AzureStor::list_blobs(containerconnection, 
                                             dir = blobfilepath, 
                                             prefix = savename, 
                                             recursive = T)$name
-    if ( !is.null(filelistincloud )){
-      print("file exists in the path and you have selected to not overwrite. change overwrite=T if you want")
+    if (paste0(blobfilepath, "/", savename) %in% filelistincloud) {
+      print("File exists in the path and you have selected to not overwrite. Change overwrite = T if you want.")
       break
     }		
   }
   
   
-  # create a temporary local directory if one wasn't provided
-  if(templocalpath == "default") {
+  # Create a temporary local directory if one wasn't provided.
+  if (templocalpath == "default") {
     templocalpath = file.path(tempdir(), as.numeric(Sys.time()))
     dir.create(templocalpath)
   }
 
-  # write the data to a file in the specified format
-  if(format == "parquet") {
+  # Write the data to a file in the specified format.
+  if (format == "parquet") {
     arrow::write_parquet(data, file.path(templocalpath, savename))
   }
-  if(format == "rds") {
+  if (format == "rds") {
     saveRDS(data, file.path(templocalpath, savename))
   }
-  if(format == "csv") {
+  if (format == "csv") {
     data.table::fwrite(data, file.path(templocalpath, savename))
   }
 
-  # upload the file to the Azure Blob storage container
+  # Upload the file to the Azure Blob storage container.
   AzureStor::storage_upload(containerconnection,
                             file.path(templocalpath, savename),
                             file.path(blobfilepath, savename))
 
-  # remove the temporary local directory and its contents if one was created
-  if(templocalpath == "default") {
+  # Remove the temporary local directory and its contents if one was created.
+  if (templocalpath == "default") {
     unlink(templocalpath, recursive = TRUE)
   } else {
     file.remove(file.path(templocalpath, savename))

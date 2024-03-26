@@ -1,3 +1,7 @@
+# Rinvent 1.1.6
+- Release 2024-03-26
+- Bug fix: if delta file includes "compact" information readparquetR wasn't able to read. Fixed.
+
 # Rinvent 1.1.5
 - Release 2024-01-25
 - Bug fix: overwrite parameter did not work when set to F. Now fixed.

@@ -76,6 +76,7 @@ readparquetR = function(pathtoread,
     filelistincloud = filelistincloud[filelistincloud%like% '.json' |
                                         filelistincloud%like% '.checkpoint.parquet'
     ]
+    filelistincloud <- filelistincloud[!filelistincloud %like% ".compacted."]
 
     if(length(filelistincloud)>0){
       filelistincloud=filelistincloud[order(filelistincloud)]

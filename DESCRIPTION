@@ -1,7 +1,7 @@
 Package: Rinvent
 Type: Package
 Title: Useful simple functions for R to work with cloud and data analysis
-Version: 1.1.6
+Version: 1.1.7
 Author: c(
   person("korayp"),
   person("onuru")

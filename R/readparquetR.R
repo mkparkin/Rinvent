@@ -441,7 +441,8 @@ readparquetR = function(pathtoread,
                             pattern = ".json",
                             full.names = T,
                             recursive = T)
-
+      jsonlist <- jsonlist[!jsonlist %like% "compacted."]
+      
       jsonlist=jsonlist[order(jsonlist)]
       js = jsonlist[1]
       data_part_add_master = data.table()

@@ -1,4 +1,4 @@
-# Rinvent 1.1.6
+# Rinvent 1.1.7
 - Release 2024-05-15
 - Bug fix: if delta file includes "compact" information readparquetR wasn't able to read locally. Fixed.
 
